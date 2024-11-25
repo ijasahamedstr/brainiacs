@@ -11,7 +11,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
 
-const pages1 = ['Courses', 'About']; // Pages
+const pages1 = ['Courses', 'About',' Events',' Blog','Contact']; // Pages
 
 function ResponsiveAppBar() {
   const [drawerOpen, setDrawerOpen] = React.useState(false);
@@ -51,11 +51,13 @@ function ResponsiveAppBar() {
               '&:hover': {
                 backgroundColor: '#444',
               },
-              color: location.pathname === `/${page.toLowerCase()}` ? '#000' : 'inherit',
+              color: location.pathname === `/${page.toLowerCase()}` ? 'white' : 'inherit',  // Active text color white
               padding: '10px', // Add padding for better click target
             }}
           >
-            <Typography sx={{ textAlign: 'center', fontFamily: 'Noto Kufi Arabic', fontSize: '14px' }}>{page}</Typography> {/* Smaller font size */}
+            <Typography sx={{ textAlign: 'center', fontFamily: 'Noto Kufi Arabic', fontSize: '14px' }}>
+              {page}
+            </Typography> {/* Smaller font size */}
           </MenuItem>
         ))}
       </Box>
@@ -113,14 +115,14 @@ function ResponsiveAppBar() {
                 sx={{
                   my: 0.5,  // Reduced vertical margin to make buttons closer
                   mx: 2,    // Increased horizontal margin to spread items
-                  color: location.pathname === `/${page.toLowerCase()}` ? '#000' : 'white', // Active page color change
+                  color: location.pathname === `/${page.toLowerCase()}` ? 'white' : 'inherit',  // Active text color white
                   display: 'block',
                   fontFamily: 'Noto Kufi Arabic',
                   fontSize: { xs: '12px', sm: '14px', md: '16px' },  // Smaller font size
                   borderRadius: '50px',
-                  backgroundColor: location.pathname === `/${page.toLowerCase()}` ? '#06f9f3' : 'transparent',  // Active page background
+                  backgroundColor: location.pathname === `/${page.toLowerCase()}` ? '#0b5097' : 'transparent',  // Active page background
                   '&:hover': {
-                    backgroundColor: location.pathname !== `/${page.toLowerCase()}` ? '#444' : '#05c5d0',
+                    backgroundColor: location.pathname !== `/${page.toLowerCase()}` ? '#444' : '#0b5097',
                   },
                 }}
               >
@@ -135,13 +137,13 @@ function ResponsiveAppBar() {
             to="/register"  // Link to the register page or trigger a function
             sx={{
               color: 'white',
-              backgroundColor: '#06f9f3',
+              backgroundColor: '#0b5097',
               fontFamily: 'Noto Kufi Arabic',
               fontSize: { xs: '12px', sm: '14px', md: '16px' },
               borderRadius: '50px',
               padding: '10px 20px',  // Add padding to make it more prominent
               '&:hover': {
-                backgroundColor: '#05c5d0',  // Hover effect for the button
+                backgroundColor: '#0b5097',  // Hover effect for the button
               },
               ml: 2,  // Margin left to add space between this button and the others
             }}
