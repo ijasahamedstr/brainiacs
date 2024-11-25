@@ -55,7 +55,7 @@ function ResponsiveAppBar() {
               padding: '10px', // Add padding for better click target
             }}
           >
-            <Typography sx={{ textAlign: 'center', fontFamily: 'Noto Kufi Arabic', fontSize: '14px' }}>
+            <Typography sx={{ textAlign: 'center', fontFamily: 'Noto Kufi Arabic', fontSize: '14px' }} >
               {page}
             </Typography> {/* Smaller font size */}
           </MenuItem>
@@ -131,7 +131,7 @@ function ResponsiveAppBar() {
             ))}
           </Box>
 
-          {/* Register Online Button */}
+          {/* Register Online Button (Hidden on Mobile) */}
           <Button
             component={Link}
             to="/register"  // Link to the register page or trigger a function
@@ -146,6 +146,7 @@ function ResponsiveAppBar() {
                 backgroundColor: '#0b5097',  // Hover effect for the button
               },
               ml: 2,  // Margin left to add space between this button and the others
+              display: { xs: 'none', md: 'block' },  // Hide on mobile (xs) and show on medium (md) and up
             }}
           >
             Register Online

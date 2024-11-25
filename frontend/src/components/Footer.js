@@ -8,7 +8,7 @@ export default function Footer() {
       <Container maxWidth="lg">
         <Toolbar sx={{ justifyContent: 'center', flexDirection: { xs: 'column', sm: 'row' }, marginTop: '15px' }}>
           <Grid container justifyContent="center">
-            {[
+            {[ 
               { icon: <Facebook />, label: 'facebook' },
               { icon: <Twitter />, label: 'twitter' },
               { icon: <Instagram />, label: 'instagram' },
@@ -22,7 +22,7 @@ export default function Footer() {
                   sx={{
                     borderRadius: '50%',
                     border: '1px solid #fff',
-                    color: '#1e8449',
+                    color: '#33b24c',  // Updated color to #33b24c
                   }}
                 >
                   {icon}

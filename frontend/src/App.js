@@ -7,9 +7,6 @@ import "slick-carousel/slick/slick-theme.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Footer from './components/Footer';
-import LoginCard from './components/Login';
-import Registration from './components/Registration';
-import OTPlogin from './components/OTP';
 import Products from './components/Products';
 import Aboutus from './components/About';
 
@@ -29,9 +26,6 @@ function App() {
         <Route path="/" element={<Home/>} />
         <Route path="/Courses" element={<Products/>} />
         <Route path="/about" element={<Aboutus/>} />
-        <Route path="/Login" element={<LoginCard/>} />
-        <Route path="/register" element={<Registration/>} />
-        <Route path="/dashboard" element={<OTPlogin/>} />
       </Routes>
       <Footer/>
     </Router>
