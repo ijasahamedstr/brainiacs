@@ -131,19 +131,19 @@ function ResponsiveAppBar() {
             ))}
           </Box>
 
-          {/* Register Online Button (Hidden on Mobile) */}
+          {/* Register Online Button with Linear Gradient */}
           <Button
             component={Link}
             to="/register"  // Link to the register page or trigger a function
             sx={{
               color: 'white',
-              backgroundColor: '#0b5097',
+              backgroundImage: 'linear-gradient(to right, #0073e6, #005bb5)', // Linear gradient from blue to darker blue
               fontFamily: 'Noto Kufi Arabic',
               fontSize: { xs: '12px', sm: '14px', md: '16px' },
               borderRadius: '50px',
               padding: '10px 20px',  // Add padding to make it more prominent
               '&:hover': {
-                backgroundColor: '#0b5097',  // Hover effect for the button
+                backgroundImage: 'linear-gradient(to right, #005bb5, #003f8e)',  // Darker gradient on hover
               },
               ml: 2,  // Margin left to add space between this button and the others
               display: { xs: 'none', md: 'block' },  // Hide on mobile (xs) and show on medium (md) and up

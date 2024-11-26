@@ -35,7 +35,11 @@ const FadeCarousel = () => {
                 className="d-block w-100"
                 src={item.img}
                 alt={item.title}
-                style={{ height: '70vh', objectFit: 'cover' }} // Adjust height as needed
+                style={{
+                  width: '100%', // Ensure image takes the full width of its container
+                  height: '70vh', // Adjust height as needed (you can also use '100%' or specific px values)
+                  objectFit: 'cover', // Ensures image covers the area without distortion
+                }}
               />
               <Carousel.Caption
                 style={{
