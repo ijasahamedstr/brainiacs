@@ -53,65 +53,7 @@ function VisionandMission() {
           },
         }}
       >
-        <Typography
-          variant="h4"
-          component="h3"
-          sx={{
-            fontFamily: "Poppins, sans-serif",
-            fontWeight: 600,
-            color: "#333",
-            marginTop: "40px", // Margin top for spacing
-            opacity: 0, // Start hidden
-            animation: "slideIn 1s forwards", // Animation to slide in text
-            "@keyframes slideIn": {
-              "0%": {
-                transform: "translateX(100%)", // Start offscreen to the right
-                opacity: 0,
-              },
-              "100%": {
-                transform: "translateX(0)", // End at original position
-                opacity: 1,
-              },
-            },
-          }}
-        >
-          Our Vision
-        </Typography>
 
-        <Typography
-          variant="h6"
-          sx={{
-            marginTop:'15px',
-            color: "white", // Ensuring the text is visible against the background
-            fontWeight: "bold",
-            textShadow:
-              "2px 2px 4px rgba(0, 0, 0, 0.7), -2px -2px 4px rgba(0, 0, 0, 0.7), 2px -2px 4px rgba(0, 0, 0, 0.7), -2px 2px 4px rgba(0, 0, 0, 0.7)", // Adding a shadow to create a black outline effect
-            maxWidth: "100%", // Limiting the width to make the text look better on large screens
-            margin: "0 auto", // Center text on large screens
-            opacity: 0, // Start hidden
-            animation: "slideIn 1.5s forwards", // Slightly slower slide-in for the second line
-            "@keyframes slideIn": {
-              "0%": {
-                transform: "translateX(100%)", // Start offscreen to the right
-                opacity: 0,
-              },
-              "100%": {
-                transform: "translateX(0)", // End at original position
-                opacity: 1,
-              },
-            },
-            "@media (max-width: 900px)": {
-              fontSize: "1.75rem", // Reduce font size for tablets and smaller screens
-              maxWidth: "90%", // Adjust max width for tablets and smaller screens
-            },
-            "@media (max-width: 600px)": {
-              fontSize: "1.5rem", // Smaller font size for mobile
-              maxWidth: "100%", // Take up more space on mobile
-            },
-          }}
-        >
-          To emerge as the most sought-after education and training partner in the region by making a meaningful contribution towards building a knowledgeable society.
-        </Typography>
       </Container>
     </Box>
   );
