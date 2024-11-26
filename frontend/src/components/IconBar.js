@@ -16,7 +16,6 @@ function IconBar() {
         flexDirection: "column", // Stack items vertically
         height: "auto", // Adjust height to fit the content
         paddingTop: "40px", // More padding at the top for balance
-        paddingBottom: "40px", // Padding for the bottom
         backgroundImage: 'url("https://your-image-url.com/image.jpg")', // Replace with your image URL
         backgroundSize: "cover", // Ensure the background covers the entire section
         backgroundPosition: "center", // Center the background image
