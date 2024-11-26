@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
 
 // Array of image URLs for the slider
 function VisionandMission() {
