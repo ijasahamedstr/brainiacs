@@ -85,6 +85,7 @@ function CompanyProfile() {
                 backgroundColor: "#33b24c", 
                 width: "30%", // Default width for larger screens
                 alignSelf: "flex-start", // Right-align the horizontal rule for larger screens
+                margin: "20px auto", // Center horizontally with some margin for spacing
               }}
               className="horizontal-line"
             />
