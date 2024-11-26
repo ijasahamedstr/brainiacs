@@ -27,7 +27,8 @@ function CompanyProfile() {
         sx={{
           paddingX: { xs: 2, sm: 3, md: 5 }, // Responsive padding for different screen sizes
           textAlign: "center", // Center text for all screen sizes
-          marginTop: '30px'
+          marginTop: '30px',
+          marginBottom:'30px'
         }}
       >
         <Box
