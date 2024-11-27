@@ -130,8 +130,9 @@ function VisionSection() {
                         fontFamily: '"Roboto", sans-serif',
                         lineHeight: '1.6',
                         textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)', // Black outline shadow for description
-                        paddingLeft: { xs: 0, sm: 2 }, // Padding adjustment for mobile view
-                        paddingRight: { xs: 0, sm: 2 }, // Padding adjustment for mobile view
+                        paddingLeft: { xs: 0, sm: 0 }, // Padding adjustment for mobile view
+                        paddingRight: { xs: 0, sm: 0 }, // Padding adjustment for mobile view
+                      
                       }}
                       paragraph
                     >

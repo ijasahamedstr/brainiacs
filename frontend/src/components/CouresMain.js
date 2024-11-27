@@ -22,7 +22,7 @@ function CouresMain() {
     },
     {
       title: "School of Engineering",
-      categories: "",
+      categories: "Diploma Level",
       description: "Stylish and efficient laptop for professionals.",
       imageUrl: "https://via.placeholder.com/400", // Placeholder image URL
     },
