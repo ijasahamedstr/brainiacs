@@ -6,7 +6,6 @@ import 'swiper/css/navigation'; // Navigation styles
 import 'swiper/css/pagination'; // Pagination styles
 
 function VisionSection() {
-  // Array of event data
   const events = [
     {
       title: 'Our Vision',
@@ -63,7 +62,6 @@ function VisionSection() {
         }}
       >
         <Swiper spaceBetween={30} slidesPerView={1} loop>
-          {/* Loop through events and create a SwiperSlide for each */}
           {events.map((event, index) => (
             <SwiperSlide key={index}>
               <Card
@@ -111,12 +109,13 @@ function VisionSection() {
                     {/* Title with larger and customized font */}
                     <Typography
                       sx={{
-                        fontSize: { xs: '1rem', sm: '1.5rem', md: '2rem' },
+                        fontSize: { xs: '1.5rem', sm: '1.75rem', md: '2.25rem' },
                         fontWeight: 'bold',
                         color: '#0073e6',
                         fontFamily: '"Poppins", sans-serif',
                         textTransform: 'uppercase',
                         textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)', // Black outline shadow for title
+                        lineHeight: 1.2, // Adjust line height to prevent overflow
                       }}
                       gutterBottom
                     >
@@ -126,11 +125,13 @@ function VisionSection() {
                     <Typography
                       variant="body1"
                       sx={{
-                        fontSize: { xs: '1.5rem', sm: '2rem', md: '2rem' },
+                        fontSize: { xs: '1.2rem', sm: '1.5rem', md: '1.75rem' },
                         color: '#fff',
                         fontFamily: '"Roboto", sans-serif',
                         lineHeight: '1.6',
                         textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)', // Black outline shadow for description
+                        paddingLeft: { xs: 0, sm: 2 }, // Padding adjustment for mobile view
+                        paddingRight: { xs: 0, sm: 2 }, // Padding adjustment for mobile view
                       }}
                       paragraph
                     >
