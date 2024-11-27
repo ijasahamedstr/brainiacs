@@ -28,7 +28,7 @@ function CompanyProfile() {
           paddingX: { xs: 2, sm: 3, md: 5 }, // Responsive padding for different screen sizes
           textAlign: "center", // Center text for all screen sizes
           marginTop: '30px',
-          marginBottom:'30px'
+          marginBottom: '30px',
         }}
       >
         <Box
@@ -43,13 +43,15 @@ function CompanyProfile() {
             borderRadius: "16px", // Increased border radius for a more rounded look
             backgroundColor: "#fff", // White background for the content section
             padding: "30px", // Add padding inside the section
+            flexWrap: "wrap", // Ensure the elements wrap on smaller screens
           }}
         >
           {/* Heading Section */}
           <Box
             sx={{
-              flex: "0 0 30%", // Set the width of the heading to 30%
+              flex: { xs: "0 0 100%", sm: "0 0 30%" }, // Make heading take full width on small screens, 30% on larger
               textAlign: { xs: "center", sm: "left" }, // Center text on small screens, left-align on larger screens
+              marginBottom: { xs: 3, sm: 0 }, // Add margin to bottom on smaller screens for spacing
             }}
           >
             <Typography
@@ -119,6 +121,7 @@ function CompanyProfile() {
                 fontWeight: 400, // Regular weight for the description
                 color: "#666", // Light gray color for the description
                 lineHeight: 2, // Increase line height for better readability
+                fontSize: { xs: "0.875rem", sm: "1rem", md: "1.125rem" }, // Responsive font size
               }}
             >
               Welcome to Brainiacs Campus, a leading educational platform designed to empower students at every stage of their academic journey. At Brainiacs Campus, we believe that education is the key to unlocking potential and creating opportunities. Our mission is to provide accessible, high-quality education to students from all walks of life, whether you’re beginning your journey with certificate-level courses or advancing towards a master’s degree.
@@ -135,6 +138,7 @@ function CompanyProfile() {
                 "&:hover": {
                   backgroundImage: "linear-gradient(to right, #005bb5, #003f8e)", // Darker gradient on hover
                 },
+                marginTop: { xs: "20px", sm: "40px" }, // Margin top for mobile devices
               }}
             >
               About us

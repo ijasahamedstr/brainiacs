@@ -1,16 +1,11 @@
 import React from "react";
 import {
   Container,
-  Grid,
   Card,
-  CardMedia,
   CardContent,
   Typography,
   Box,
-  Badge,
-  Button,
 } from "@mui/material";
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css"; // Swiper default styles
@@ -19,17 +14,47 @@ import "swiper/css/navigation"; // Navigation styles (if used)
 
 function CouresMain() {
   const products = [
-    { title: "HP Notebook", img: "https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/4.webp", combo: "x4", price: "$899" },
-    { title: "HP Envy", img: "https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/7.webp", combo: "x2", price: "$750" },
-    { title: "Toshiba B77", img: "https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/5.webp", combo: "x3", price: "$499" },
-    { title: "Lenovo ThinkPad", img: "https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/6.webp", combo: "x1", price: "$650" },
-    { title: "Dell XPS 13", img: "https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/8.webp", combo: "x2", price: "$999" },
-    { title: "Asus ZenBook", img: "https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/9.webp", combo: "x1", price: "$699" },
+    {
+      title: "School of Engineering",
+      categories: "Level 4 Diploma in Software Engineering",
+      description: "Foundation Year in IT – Kingston University (UK)",
+      imageUrl: "https://via.placeholder.com/400", // Placeholder image URL
+    },
+    {
+      title: "School of Engineering",
+      categories: "",
+      description: "Stylish and efficient laptop for professionals.",
+      imageUrl: "https://via.placeholder.com/400", // Placeholder image URL
+    },
+    {
+      title: "School of Engineering",
+      categories: "",
+      description: "Stylish and efficient laptop for professionals.",
+      imageUrl: "https://via.placeholder.com/400", // Placeholder image URL
+    },
+    {
+      title: "School of Engineering",
+      categories: "",
+      description: "Reliable and durable business laptop.",
+      imageUrl: "https://via.placeholder.com/400", // Placeholder image URL
+    },
+    {
+      title: "School of Engineering",
+      categories: "",
+      description: "Premium laptop for demanding tasks.",
+      imageUrl: "https://via.placeholder.com/400", // Placeholder image URL
+    },
+    {
+      title: "School of Engineering",
+      categories: "",
+      description: "Stylish and efficient laptop for professionals.",
+      imageUrl: "https://via.placeholder.com/400", // Placeholder image URL
+    },
   ];
 
   return (
     <section style={{ backgroundColor: '#f2f3f4', width: '100%', margin: '0 auto', marginTop: '-30px' }}>
-      <Container maxWidth="xl" sx={{ padding: 3 }}>
+      <Container maxWidth="xl" sx={{ padding: 3,paddingTop:'50px' }}>
         {/* Heading Section */}
         <Box mb={4} textAlign="center">
           <Typography
@@ -39,11 +64,23 @@ function CouresMain() {
               fontFamily: 'Noto Kufi Arabic, sans-serif',
               fontWeight: 'bold',
               color: '#333',
-              fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' }
+              fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' },
             }}
           >
             Explore Our Courses
           </Typography>
+          {/* HR Element - Styled Horizontal Line */}
+          <hr
+              style={{
+                border: "none", 
+                height: "4px", 
+                backgroundColor: "#33b24c", 
+                width: "10%", // Default width for larger screens
+                alignSelf: "flex-start", // Right-align the horizontal rule for larger screens
+                margin: "20px auto", // Center horizontally with some margin for spacing
+              }}
+              className="horizontal-line"
+            />
         </Box>
 
         {/* Swiper Section */}
@@ -56,24 +93,31 @@ function CouresMain() {
           breakpoints={{
             320: { slidesPerView: 1 },
             600: { slidesPerView: 2 },
-            900: { slidesPerView: 3 },  // Three cards for medium screens
-            1024: { slidesPerView: 5 }, // Five cards for large screens
+            900: { slidesPerView: 3 },
+            1024: { slidesPerView: 5 },
           }}
         >
           {products.map((product, index) => (
             <SwiperSlide key={index}>
               <Card
                 sx={{
+                  position: 'relative',
                   transition: '0.3s',
                   '&:hover': {
-                    boxShadow: 4,
-                    transform: 'scale(1.02)',
+                    boxShadow: 6,
+                    transform: 'scale(1.05)',
                   },
-                  borderRadius: 2,
+                  borderRadius: 3,
                   border: '1px solid #ddd',
-                  boxShadow: 3,
+                  boxShadow: 2,
+                  backgroundImage: `url(${product.imageUrl})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  height: 400,
+                  width: '100%',
                 }}
               >
+                {/* Content Box at the Top */}
                 <Box display="flex" justifyContent="space-between" p={2}>
                   <Typography
                     variant="h6"
@@ -82,68 +126,34 @@ function CouresMain() {
                       fontFamily: 'Noto Kufi Arabic, sans-serif',
                       fontSize: { xs: '0.8rem', sm: '0.9rem' },
                       fontWeight: 'bold',
+                      color: 'white',
                     }}
                   >
-                    {product.title}
+                    {product.title} | {product.categories}
                   </Typography>
-                  <Badge
-                    badgeContent={product.combo}
-                    color="info"
-                    sx={{
-                      borderRadius: "50%",
-                      width: 35,
-                      height: 35,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                    }}
-                  />
                 </Box>
 
-                <CardMedia
-                  component="img"
-                  image={product.img}
-                  alt={product.title}
+                {/* CardContent at the bottom */}
+                <CardContent
                   sx={{
-                    height: { xs: 150, sm: 200 },
-                    objectFit: "cover",
-                    borderTopLeftRadius: 2,
-                    borderTopRightRadius: 2,
-                    transition: '0.3s ease-in-out',
-                    '&:hover': { opacity: 0.8 },
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    padding: 2,
+                    background: 'rgba(0, 0, 0, 0.5)',
+                    color: 'white',
                   }}
-                />
-
-                <CardContent sx={{ padding: 2 }}>
+                >
                   <Typography
-                    variant="h6"
-                    color="primary"
+                    variant="body2"
                     sx={{
                       fontFamily: 'Noto Kufi Arabic, sans-serif',
-                      fontWeight: 'bold',
-                      fontSize: { xs: '0.875rem', sm: '1rem' }
+                      fontSize: { xs: '0.75rem', sm: '0.875rem' },
                     }}
                   >
-                    {product.price}
+                    {product.description}
                   </Typography>
-
-                  <Box mt={1}>
-                    <Button
-                      variant="contained"
-                      startIcon={<AddShoppingCartIcon />}
-                      sx={{
-                        background: 'linear-gradient(90deg, #2196F3, #21CBF3)',
-                        color: '#fff',
-                        '&:hover': { background: '#115293' },
-                        padding: { xs: '6px 12px', sm: '8px 16px' },
-                        fontSize: { xs: '0.875rem', sm: '1rem' },
-                      }}
-                      fullWidth
-                      style={{ fontFamily: 'Noto Kufi Arabic, sans-serif' }}
-                    >
-                      أضف إلى السلة
-                    </Button>
-                  </Box>
                 </CardContent>
               </Card>
             </SwiperSlide>
