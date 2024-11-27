@@ -67,7 +67,7 @@ function CouresMain() {
               fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' },
             }}
           >
-            Explore Our Courses
+            Explore Our <span style={{color:'#0073e6'}}>Courses</span>
           </Typography>
           {/* HR Element - Styled Horizontal Line */}
           <hr
@@ -141,7 +141,7 @@ function CouresMain() {
                     left: 0,
                     right: 0,
                     padding: 2,
-                    background: 'rgba(0, 0, 0, 0.5)',
+                    background: 'linear-gradient(to right, #0073e6, #005bb5)',
                     color: 'white',
                   }}
                 >
