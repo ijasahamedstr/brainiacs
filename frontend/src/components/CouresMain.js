@@ -56,7 +56,7 @@ function CouresMain() {
   ];
 
   return (
-    <section style={{ backgroundColor: '#f2f3f4', width: '100%', margin: '0 auto', marginTop: '-30px' }}>
+    <section style={{ backgroundColor: '#f2f3f4', width: '100%', margin: '0 auto', marginTop: '-30px',marginBottom:'30px' }}>
       <Container maxWidth="xl" sx={{ padding: 3, paddingTop: '50px' }}>
         {/* Heading and Button on Same Line */}
         <Grid container spacing={2}>
@@ -144,6 +144,7 @@ function CouresMain() {
                   backgroundPosition: 'center',
                   height: 400,
                   width: '100%',
+                  marginBottom:'30px'
                 }}
               >
                 {/* Content Box at the Top */}
