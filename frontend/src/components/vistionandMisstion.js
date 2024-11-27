@@ -111,7 +111,7 @@ function VisionSection() {
                     {/* Title with larger and customized font */}
                     <Typography
                       sx={{
-                        fontSize: { xs: '0.8rem', sm: '1rem', md: '1.5rem' },
+                        fontSize: { xs: '1rem', sm: '1.5rem', md: '2rem' },
                         fontWeight: 'bold',
                         color: '#0073e6',
                         fontFamily: '"Poppins", sans-serif',
@@ -126,7 +126,7 @@ function VisionSection() {
                     <Typography
                       variant="body1"
                       sx={{
-                        fontSize: { xs: '1rem', sm: '1.5rem', md: '2rem' },
+                        fontSize: { xs: '1.5rem', sm: '2rem', md: '2rem' },
                         color: '#fff',
                         fontFamily: '"Roboto", sans-serif',
                         lineHeight: '1.6',
