@@ -28,25 +28,25 @@ function CouresMain() {
     },
     {
       title: "School of Engineering",
-      categories: "",
+      categories: "Undergraduate Level",
       description: "Stylish and efficient laptop for professionals.",
       imageUrl: "https://via.placeholder.com/400", // Placeholder image URL
     },
     {
       title: "School of Engineering",
-      categories: "",
+      categories: "	Higher National Diploma Level",
       description: "Reliable and durable business laptop.",
       imageUrl: "https://via.placeholder.com/400", // Placeholder image URL
     },
     {
       title: "School of Engineering",
-      categories: "",
+      categories: "Undergraduate Level",
       description: "Premium laptop for demanding tasks.",
       imageUrl: "https://via.placeholder.com/400", // Placeholder image URL
     },
     {
       title: "School of Engineering",
-      categories: "",
+      categories: "Higher National Diploma Level",
       description: "Stylish and efficient laptop for professionals.",
       imageUrl: "https://via.placeholder.com/400", // Placeholder image URL
     },
