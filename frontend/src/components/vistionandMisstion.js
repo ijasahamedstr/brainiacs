@@ -112,7 +112,7 @@ function VisionSection() {
                         fontSize: { xs: '1.5rem', sm: '1.75rem', md: '2.25rem' },
                         fontWeight: 'bold',
                         color: '#0073e6',
-                        fontFamily: '"Poppins", sans-serif',
+                        fontFamily: "Noto Kufi Arabic",
                         textTransform: 'uppercase',
                         textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)', // Black outline shadow for title
                         lineHeight: 1.2, // Adjust line height to prevent overflow
@@ -127,7 +127,7 @@ function VisionSection() {
                       sx={{
                         fontSize: { xs: '1.2rem', sm: '1.5rem', md: '1.75rem' },
                         color: '#fff',
-                        fontFamily: '"Roboto", sans-serif',
+                        fontFamily: "Noto Kufi Arabic",
                         lineHeight: '1.6',
                         textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)', // Black outline shadow for description
                         paddingLeft: { xs: 0, sm: 0 }, // Padding adjustment for mobile view

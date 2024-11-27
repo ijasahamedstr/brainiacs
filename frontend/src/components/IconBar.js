@@ -30,6 +30,7 @@ function IconBar() {
           gap: "20px", // Space between the cards
           width: "100%", // Ensure grid takes full width
           padding: "0 20px", // Adjust padding for left and right
+          fontFamily: "Noto Kufi Arabic",
         }}
       >
         {/* Cards */}

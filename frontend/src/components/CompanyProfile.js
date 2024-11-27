@@ -59,7 +59,7 @@ function CompanyProfile() {
               component="h1"
               gutterBottom
               sx={{
-                fontFamily: "Poppins, sans-serif",
+                fontFamily: "Noto Kufi Arabic",
                 fontWeight: 600,
                 color: "#333", // Dark color for the heading
               }}
@@ -72,7 +72,7 @@ function CompanyProfile() {
               component="h1"
               gutterBottom
               sx={{
-                fontFamily: "Poppins, sans-serif",
+                fontFamily: "Noto Kufi Arabic",
                 fontWeight: 600,
                 color: "#0073e6", // Adding a nice blue color to the second heading
               }}
@@ -105,7 +105,7 @@ function CompanyProfile() {
               variant="h6"
               component="h3"
               sx={{
-                fontFamily: "Poppins, sans-serif",
+                fontFamily: "Noto Kufi Arabic",
                 fontWeight: 600,
                 color: "#333",
                 marginTop: "40px", // Margin top for spacing
@@ -117,7 +117,7 @@ function CompanyProfile() {
               variant="body1"
               paragraph
               sx={{
-                fontFamily: "Poppins, sans-serif", // Apply the Poppins font
+                fontFamily: "Noto Kufi Arabic", // Apply the Poppins font
                 fontWeight: 400, // Regular weight for the description
                 color: "#666", // Light gray color for the description
                 lineHeight: 2, // Increase line height for better readability

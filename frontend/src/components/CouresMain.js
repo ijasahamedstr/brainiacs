@@ -7,7 +7,6 @@ import {
   Box,
   Button,
   Grid, 
-  Paper
 } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
