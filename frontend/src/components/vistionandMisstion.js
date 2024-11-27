@@ -14,8 +14,8 @@ function VisionSection() {
       image: 'https://i.ibb.co/Ry1Zj2h/ban.png',
     },
     {
-      title: 'الشاشة التفاعلية الجديدة',
-      description: 'تجربة لنظام تشغيل الشاشة التفاعية الجديدة يجريها مدير قسم السوشيال ميديا قبل البدأ في تفعيل حملة تسويقية.',
+      title: 'Our Mission',
+      description: 'To emerge as the most sought-after education and training partner in the region by making a meaningful contribution towards building a knowledgeable society.',
       image: 'https://i.ibb.co/Ry1Zj2h/ban.png',
     },
   ];
@@ -63,7 +63,7 @@ function VisionSection() {
         }}
       >
         <Swiper spaceBetween={30} slidesPerView={1} loop>
-          {/* SwiperSlide for each card */}
+          {/* Loop through events and create a SwiperSlide for each */}
           {events.map((event, index) => (
             <SwiperSlide key={index}>
               <Card
