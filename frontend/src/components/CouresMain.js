@@ -5,12 +5,16 @@ import {
   CardContent,
   Typography,
   Box,
+  Button,
+  Grid, 
+  Paper
 } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css"; // Swiper default styles
 import "swiper/css/pagination"; // Pagination styles (if used)
 import "swiper/css/navigation"; // Navigation styles (if used)
+
 
 function CouresMain() {
   const products = [
@@ -34,7 +38,7 @@ function CouresMain() {
     },
     {
       title: "School of Engineering",
-      categories: "	Higher National Diploma Level",
+      categories: "Higher National Diploma Level",
       description: "Reliable and durable business laptop.",
       imageUrl: "https://via.placeholder.com/400", // Placeholder image URL
     },
@@ -54,34 +58,60 @@ function CouresMain() {
 
   return (
     <section style={{ backgroundColor: '#f2f3f4', width: '100%', margin: '0 auto', marginTop: '-30px' }}>
-      <Container maxWidth="xl" sx={{ padding: 3,paddingTop:'50px' }}>
-        {/* Heading Section */}
-        <Box mb={4} textAlign="center">
-          <Typography
-            variant="h4"
-            component="h2"
-            sx={{
-              fontFamily: 'Noto Kufi Arabic, sans-serif',
-              fontWeight: 'bold',
-              color: '#333',
-              fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' },
-            }}
-          >
-            Explore Our <span style={{color:'#0073e6'}}>Courses</span>
-          </Typography>
-          {/* HR Element - Styled Horizontal Line */}
-          <hr
+      <Container maxWidth="xl" sx={{ padding: 3, paddingTop: '50px' }}>
+        {/* Heading and Button on Same Line */}
+        <Grid container spacing={2}>
+          {/* Row 1 */}
+          <Grid item xs={12} sm={4}>
+          </Grid>
+          <Grid item xs={12} sm={4}>
+            <Typography
+              variant="h4"
+              component="h2"
+              sx={{
+                fontFamily: "Noto Kufi Arabic, sans-serif",
+                fontWeight: "bold",
+                color: "#333",
+                fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
+                textAlign: "center", // Center the title text
+              }}
+            >
+              Explore Our <span style={{ color: "#0073e6" }}>Courses</span>
+            </Typography>
+            <hr
               style={{
-                border: "none", 
-                height: "4px", 
-                backgroundColor: "#33b24c", 
+                border: "none",
+                height: "4px",
+                backgroundColor: "#33b24c",
                 width: "10%", // Default width for larger screens
-                alignSelf: "flex-start", // Right-align the horizontal rule for larger screens
+                alignSelf: "center", // Center the horizontal rule
                 margin: "20px auto", // Center horizontally with some margin for spacing
               }}
               className="horizontal-line"
             />
-        </Box>
+          </Grid>
+          <Grid item xs={12} sm={4} container justifyContent="flex-end">
+            <Button
+              variant="contained"
+              color="primary"
+              sx={{
+                fontFamily: "Noto Kufi Arabic, sans-serif",
+                fontWeight: "bold",
+                textTransform: "none",
+                borderRadius: 2,
+                padding: "10px 20px",
+                backgroundColor: "#0073e6",
+                "&:hover": {
+                  backgroundColor: "#005bb5",
+                },
+                display: { xs: "none", sm: "inline-block" }, // Hide on mobile (xs)
+                height:'50px'
+              }}
+            >
+              All Courses
+            </Button>
+          </Grid>
+        </Grid>
 
         {/* Swiper Section */}
         <Swiper
