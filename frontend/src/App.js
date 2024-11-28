@@ -7,8 +7,8 @@ import "slick-carousel/slick/slick-theme.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Footer from './components/Footer';
-import Products from './components/Products';
 import Aboutus from './components/About';
+import Coures from './components/Coures';
 
 
 const theme = createTheme({
@@ -24,7 +24,7 @@ function App() {
       <ResponsiveAppBar />
       <Routes>
         <Route path="/" element={<Home/>} />
-        <Route path="/Courses" element={<Products/>} />
+        <Route path="/Courses" element={<Coures/>} />
         <Route path="/about" element={<Aboutus/>} />
       </Routes>
       <Footer/>
