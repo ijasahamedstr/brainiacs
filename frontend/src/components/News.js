@@ -28,6 +28,11 @@ const newsData = [
     description: "New research shows surprising results in health studies. What this means for the future.",
     image: "https://via.placeholder.com/150",
   },
+  {
+    headline: "Health Alert: New Medical Findings",
+    description: "New research shows surprising results in health studies. What this means for the future.",
+    image: "https://via.placeholder.com/150",
+  },
 ];
 
 function News() {
@@ -90,6 +95,7 @@ function News() {
                 style={{
                   width: '100%',
                   borderRadius: '8px', // Ensure border radius is applied here
+                  height: 'auto', // Ensure aspect ratio is maintained
                 }}
               />
               <CardContent>
@@ -109,7 +115,7 @@ function News() {
             <Grid container spacing={2}>
               {/* Dynamically generate the news list cards */}
               {newsData.map((news, index) => (
-                <Grid item xs={12} key={index}>
+                <Grid item xs={12} sm={6} md={12} key={index}>
                   <Card
                     sx={{
                       display: 'flex',
@@ -123,11 +129,12 @@ function News() {
                       src={news.image}
                       alt={`News ${index + 1}`}
                       style={{
-                        width: '120px', // Adjust image size for better fit
-                        height: 'auto',
+                        width: '100px', // Adjust image size for better fit
+                        height: '100px', // Maintain square aspect ratio for images
                         borderRadius: '8px', // Apply border-radius to images
                         marginRight: '16px', // Space between image and text
                         padding: '10px', // Add padding around the image
+                        objectFit: 'cover', // Maintain aspect ratio of images
                       }}
                     />
                     <CardContent>
