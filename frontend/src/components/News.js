@@ -69,14 +69,14 @@ function News() {
             border: "none",
             height: "4px",
             backgroundColor: "#33b24c",
-            width: "10%", // Default width for larger screens
+            width: "5%", // Default width for larger screens
             alignSelf: "center", // Center the horizontal rule
             margin: "20px auto", // Center horizontally with some margin for spacing
           }}
           className="horizontal-line"
         />
 
-        <Grid container spacing={4}>
+        <Grid container spacing={4} sx={{marginTop:'20px'}}>
           {/* Left - Big News Card */}
           <Grid item xs={12} md={8}>
             <Card

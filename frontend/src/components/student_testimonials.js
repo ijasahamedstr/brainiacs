@@ -68,7 +68,7 @@ function StudentTestimonials() {
             border: "none",
             height: "2px", // Reduced height of the line
             backgroundColor: "#33b24c",
-            width: "10%",
+            width: "5%",
             alignSelf: "center",
             margin: "10px auto", // Reduced margin
           }}
