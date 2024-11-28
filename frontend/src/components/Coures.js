@@ -281,7 +281,7 @@ function Courses() {
                 variant="outlined"
                 color="error"
                 onClick={handleClearFilters}
-                sx={{ marginTop: 2, width: "100%" }}
+                sx={{ marginTop: 2, width: "100%",fontFamily: "Noto Kufi Arabic, sans-serif"  }}
               >
                 Clear Filters
               </Button>
