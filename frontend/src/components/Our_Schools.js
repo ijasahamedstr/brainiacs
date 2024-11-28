@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Typography, Grid, Button } from "@mui/material";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward'; // Import the right arrow icon
 
 function OurSchools() {
   return (
@@ -124,6 +125,18 @@ function OurSchools() {
               <p style={{ textAlign: "center", margin: 0, fontSize: "16px", fontWeight: "bold" }}>
                 {school.name}
               </p>
+              {/* Right Arrow */}
+              <ArrowForwardIcon 
+                sx={{
+                  marginTop: "10px",
+                  color: "#0073e6",
+                  fontSize: "30px",
+                  transition: "transform 0.3s ease-in-out",
+                  "&:hover": {
+                    transform: "translateX(5px)", // Add horizontal hover effect
+                  },
+                }}
+              />
             </div>
           ))}
         </div>
