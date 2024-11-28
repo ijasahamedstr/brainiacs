@@ -1,6 +1,7 @@
 import CompanyProfile from "./CompanyProfile";
 import CouresMain from "./CouresMain";
 import IconBar from "./IconBar";
+import News from "./News";
 import OurSchools from "./Our_Schools";
 import FadeCarousel from "./Slider";
 import VisionSection from "./vistionandMisstion";
@@ -15,6 +16,7 @@ export default function Home() {
       <VisionSection/>
       <CouresMain/>
       <OurSchools/>
+      <News/>
       </>
     );
   }
