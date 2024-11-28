@@ -227,7 +227,7 @@ function Courses() {
           </Grid>
         </Grid>
 
-        <Grid container spacing={2}>
+        <Grid container spacing={2} sx={{marginTop:'20px'}}>
           {/* Left Column (30%) - Filter Section */}
           <Grid item xs={12} sm={4} md={3}>
             <Box
