@@ -20,72 +20,84 @@ import {
 function Courses() {
   const products = [
     {
+      id: 1, // Unique ID for each product
       title: "School of Engineering",
       categories: "Foundation Level",
       description: "Foundation Year in IT – Kingston University (UK)",
       imageUrl: "https://via.placeholder.com/400", // Placeholder image URL
     },
     {
+      id: 2,
       title: "School of Languages",
       categories: "Certificate Level",
       description: "Stylish and efficient laptop for professionals.",
       imageUrl: "https://via.placeholder.com/400", // Placeholder image URL
     },
     {
+      id: 3,
       title: "School of Art & Design",
       categories: "Higher National Diploma Level",
       description: "Stylish and efficient laptop for professionals.",
       imageUrl: "https://via.placeholder.com/400", // Placeholder image URL
     },
     {
+      id: 4,
       title: "School of Life Science",
       categories: "Diploma Level",
       description: "Reliable and durable business laptop.",
       imageUrl: "https://via.placeholder.com/400", // Placeholder image URL
     },
     {
+      id: 5,
       title: "School of Computing",
       categories: "Higher National Certificate",
       description: "Premium laptop for demanding tasks.",
       imageUrl: "https://via.placeholder.com/400", // Placeholder image URL
     },
     {
+      id: 6,
       title: "School of Management & Law",
       categories: "Undergraduate Level",
       description: "Stylish and efficient laptop for professionals.",
       imageUrl: "https://via.placeholder.com/400", // Placeholder image URL
     },
     {
+      id: 7,
       title: "School of Engineering",
       categories: "Postgraduate Level",
       description: "Foundation Year in IT – Kingston University (UK)",
       imageUrl: "https://via.placeholder.com/400", // Placeholder image URL
     },
     {
+      id: 8,
       title: "School of Engineering",
       categories: "Doctorate Level",
       description: "Stylish and efficient laptop for professionals.",
       imageUrl: "https://via.placeholder.com/400", // Placeholder image URL
     },
     {
+      id: 9,
       title: "School of Engineering",
       categories: "Undergraduate Level",
       description: "Stylish and efficient laptop for professionals.",
       imageUrl: "https://via.placeholder.com/400", // Placeholder image URL
     },
     {
+      id: 10,
       title: "School of Engineering",
       categories: "Undergraduate Level",
       description: "Reliable and durable business laptop.",
       imageUrl: "https://via.placeholder.com/400", // Placeholder image URL
     },
     {
+      id: 11,
       title: "School of Engineering",
       categories: "Undergraduate Level",
       description: "Premium laptop for demanding tasks.",
       imageUrl: "https://via.placeholder.com/400", // Placeholder image URL
     },
     {
+      id: 12,
       title: "School of Engineering",
       categories: "Undergraduate Level",
       description: "Stylish and efficient laptop for professionals.",
@@ -264,7 +276,7 @@ function Courses() {
                 School
               </Typography>
               {titles.map((title) => (
-                <FormControlLabel 
+                <FormControlLabel
                     key={title}
                     control={
                     <Checkbox
@@ -279,96 +291,92 @@ function Courses() {
               ))}
               <Button
                 variant="outlined"
-                color="error"
+                fullWidth
+                sx={{ marginTop: 2 }}
                 onClick={handleClearFilters}
-                sx={{ marginTop: 2, width: "100%",fontFamily: "Noto Kufi Arabic, sans-serif"  }}
               >
                 Clear Filters
               </Button>
             </Box>
           </Grid>
 
-          {/* Right Column (70%) - Course List */}
+          {/* Right Column (70%) - Course Cards */}
           <Grid item xs={12} sm={8} md={9}>
-            <Grid container spacing={2}>
-              {currentItems.map((product, index) => (
-                <Grid item xs={12} sm={6} md={3} key={index}>
-                  <Card
-                    sx={{
-                      position: "relative",
-                      borderRadius: 3,
-                      border: "1px solid #ddd",
-                      boxShadow: 2,
-                      backgroundImage: `url(${product.imageUrl})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                      height: 400,
-                      marginBottom: "30px",
-                      transition: "0.3s",
-                      "&:hover": {
-                        boxShadow: 6,
-                        transform: "scale(1.05)",
-                      },
-                    }}
+            <Grid container spacing={3}>
+              {currentItems.map((product) => (
+                <Grid item xs={12} sm={3} md={3} key={product.id}>
+                  <Link
+                    href={`/course-details/${product.id}`} // Dynamic link using product ID
+                    style={{ textDecoration: "none" }}
                   >
-                    {/* Content Box at the Top */}
-                    <Box display="flex" justifyContent="space-between" p={2}>
-                      <Typography
-                        variant="h6"
-                        component="span"
+                    <Card
+                      sx={{
+                        position: "relative",
+                        borderRadius: 3,
+                        border: "1px solid #ddd",
+                        boxShadow: 2,
+                        backgroundImage: `url(${product.imageUrl})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        height: 400,
+                        marginBottom: "30px",
+                        transition: "0.3s",
+                        "&:hover": {
+                          boxShadow: 6,
+                          transform: "scale(1.05)",
+                        },
+                      }}
+                    >
+                      {/* Content Box at the Top */}
+                      <Box display="flex" justifyContent="space-between" p={2}>
+                        <Typography
+                          variant="h6"
+                          component="span"
+                          sx={{
+                            fontFamily: "Noto Kufi Arabic, sans-serif",
+                            fontSize: { xs: "0.8rem", sm: "0.9rem" },
+                            fontWeight: "bold",
+                            color: "white",
+                          }}
+                        >
+                          {product.title} | {product.categories}
+                        </Typography>
+                      </Box>
+
+                      {/* CardContent at the bottom */}
+                      <CardContent
                         sx={{
-                          fontFamily: "Noto Kufi Arabic, sans-serif",
-                          fontSize: { xs: "0.8rem", sm: "0.9rem" },
-                          fontWeight: "bold",
+                          position: "absolute",
+                          bottom: 0,
+                          left: 0,
+                          right: 0,
+                          padding: 2,
+                          background: "linear-gradient(to right, #0073e6, #005bb5)",
                           color: "white",
                         }}
                       >
-                        {product.title} | {product.categories}
-                      </Typography>
-                    </Box>
-
-                    {/* CardContent at the bottom */}
-                    <CardContent
-                      sx={{
-                        position: "absolute",
-                        bottom: 0,
-                        left: 0,
-                        right: 0,
-                        padding: 2,
-                        background: "linear-gradient(to right, #0073e6, #005bb5)",
-                        color: "white",
-                      }}
-                    >
-                      <Typography
-                        variant="body2"
-                        sx={{
-                          fontFamily: "Noto Kufi Arabic, sans-serif",
-                          fontSize: { xs: "0.75rem", sm: "0.875rem" },
-                        }}
-                      >
-                        {product.description}
-                      </Typography>
-                    </CardContent>
-                  </Card>
+                        <Typography
+                          variant="body2"
+                          sx={{
+                            fontFamily: "Noto Kufi Arabic, sans-serif",
+                            fontSize: { xs: "0.75rem", sm: "0.875rem" },
+                          }}
+                        >
+                          {product.description}
+                        </Typography>
+                      </CardContent>
+                    </Card>
+                  </Link>
                 </Grid>
               ))}
             </Grid>
 
             {/* Pagination */}
-            <Stack
-              spacing={2}
-              sx={{
-                marginTop: "20px",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
+            <Stack spacing={2} alignItems="center" sx={{ marginTop: 2 }}>
               <Pagination
                 count={Math.ceil(filteredProducts.length / itemsPerPage)}
                 page={currentPage}
                 onChange={handlePageChange}
-                variant="outlined"
                 color="primary"
               />
             </Stack>
