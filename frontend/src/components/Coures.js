@@ -306,7 +306,7 @@ function Courses() {
               {currentItems.map((product) => (
                 <Grid item xs={12} sm={3} md={3} key={product.id}>
                   <Link
-                    href={`/course-details/${product.id}`} // Dynamic link using product ID
+                    href={`/course-details`} // Dynamic link using product ID
                     style={{ textDecoration: "none" }}
                   >
                     <Card

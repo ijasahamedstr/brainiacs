@@ -9,6 +9,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Footer from './components/Footer';
 import Aboutus from './components/About';
 import Coures from './components/Coures';
+import Coursedetails from './components/course-details';
 
 
 const theme = createTheme({
@@ -26,6 +27,7 @@ function App() {
         <Route path="/" element={<Home/>} />
         <Route path="/Courses" element={<Coures/>} />
         <Route path="/about" element={<Aboutus/>} />
+        <Route path="/course-details" element={<Coursedetails/>} />
       </Routes>
       <Footer/>
     </Router>
