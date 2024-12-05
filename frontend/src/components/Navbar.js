@@ -31,7 +31,7 @@ function ResponsiveAppBar() {
       {/* Logo */}
       <Box sx={{ padding: 2, textAlign: 'center' }}>
         <img
-          src='https://i.ibb.co/hRZ1bMy/78-removebg-preview.png'
+          src='https://i.ibb.co/MCn6qHS/Asset-6-1.png'
           alt="Logo"
           style={{ height: '40px' }}
           onClick={() => navigate('/')} // Ensure logo click navigates home
@@ -94,7 +94,7 @@ function ResponsiveAppBar() {
             }}
           >
             <img
-              src='https://i.ibb.co/hRZ1bMy/78-removebg-preview.png'
+              src='https://i.ibb.co/MCn6qHS/Asset-6-1.png'
               alt="Logo"
               style={{
                 height: 'auto',
