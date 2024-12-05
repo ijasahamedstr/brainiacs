@@ -1,5 +1,6 @@
 import React, { useState } from 'react'; 
 import { Container, Breadcrumbs, Link, Card, CardContent, CardMedia, Typography, Grid, Box, Button, Pagination } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom';  // Import react-router Link for client-side navigation
 
 export default function Blog() {
   const newsItems = [
@@ -121,11 +122,8 @@ export default function Blog() {
       </section>
 
       {/* Main Section for News Cards */}
-      <section style={{ backgroundColor: '#f2f3f4', width: '100%', margin: '0 auto' }}>
+      <section style={{width: '100%', marginTop:'20px' }}>
         <Container maxWidth="xl" sx={{ padding: 3 }}>
-          <Box display="flex" justifyContent="center" alignItems="center" sx={{ marginY: '20px' }}>
-        
-          </Box>
           <Grid container spacing={2}>
             {currentNewsItems.map((news, index) => (
               <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
@@ -138,7 +136,7 @@ export default function Blog() {
                     },
                     borderRadius: 2,
                     display: 'flex',
-                    flexDirection: 'column', // Ensure the content stretches vertically
+                    flexDirection: 'column',
                     height: '100%', // Allow the card to stretch to full height of its container
                   }}
                 >
@@ -151,7 +149,6 @@ export default function Blog() {
                       objectFit: 'cover',
                       borderTopLeftRadius: 2,
                       borderTopRightRadius: 2,
-                      paddingTop:'20px'
                     }}
                   />
                   <CardContent
@@ -169,21 +166,23 @@ export default function Blog() {
                       {news.description}
                     </Typography>
                     <Box mt={1}>
-                      <Button
-                        variant="contained"
-                        sx={{
-                          background: 'linear-gradient(90deg, #2196F3, #21CBF3)',
-                          color: '#fff',
-                          '&:hover': { background: '#115293' },
-                          padding: { xs: '6px 12px', sm: '8px 16px' },
-                          fontSize: { xs: '0.875rem', sm: '1rem' },
-                          borderRadius: '50px', // Rounded button
-                          fontFamily: 'Noto Kufi Arabic, sans-serif',
-                        }}
-                        fullWidth
-                      >
-                        Read More
-                      </Button>
+                      <RouterLink to={`/blog/${news.title.replace(/\s+/g, '-').toLowerCase()}`} style={{ textDecoration: 'none' }}>
+                        <Button
+                          variant="contained"
+                          sx={{
+                            background: 'linear-gradient(90deg, #2196F3, #21CBF3)',
+                            color: '#fff',
+                            '&:hover': { background: '#115293' },
+                            padding: { xs: '6px 12px', sm: '8px 16px' },
+                            fontSize: { xs: '0.875rem', sm: '1rem' },
+                            borderRadius: '50px', // Rounded button
+                            fontFamily: 'Noto Kufi Arabic, sans-serif',
+                          }}
+                          fullWidth
+                        >
+                          Read More
+                        </Button>
+                      </RouterLink>
                     </Box>
                   </CardContent>
                 </Card>
