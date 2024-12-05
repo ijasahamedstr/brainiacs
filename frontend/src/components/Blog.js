@@ -115,29 +115,32 @@ export default function Blog() {
               Home
             </Link>
             <Link href="/blog" underline="hover" color="inherit">
-              Blog
+              News
             </Link>
           </Breadcrumbs>
         </Container>
       </section>
 
       {/* Main Section for News Cards */}
-      <section style={{width: '100%', marginTop:'20px' }}>
+      <section style={{ width: '100%', marginTop: '20px' }}>
         <Container maxWidth="xl" sx={{ padding: 3 }}>
-          <Grid container spacing={2}>
+          <Grid container spacing={3}> {/* Increased spacing between grid items */}
             {currentNewsItems.map((news, index) => (
               <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
                 <Card
                   sx={{
                     transition: '0.3s',
                     '&:hover': {
-                      boxShadow: 4,
-                      transform: 'scale(1.02)',
+                      boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)', // Enhanced shadow effect on hover
+                      transform: 'scale(1.05)', // Smooth card scaling on hover
                     },
                     borderRadius: 2,
                     display: 'flex',
                     flexDirection: 'column',
-                    height: '100%', // Allow the card to stretch to full height of its container
+                    height: '100%', // Ensures card stretches fully
+                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Soft default shadow
+                    marginBottom: '20px', // Increased bottom margin for spacing
+                    border: '1px solid #ddd', // Subtle border for card separation
                   }}
                 >
                   <CardMedia
@@ -156,16 +159,17 @@ export default function Blog() {
                       display: 'flex',
                       flexDirection: 'column',
                       justifyContent: 'space-between',
-                      flexGrow: 1, // Ensure the content stretches to fill available space
+                      flexGrow: 1,
+                      paddingBottom: '20px', // Added space for content
                     }}
                   >
-                    <Typography variant="h6" component="span" sx={{ fontFamily: 'Noto Kufi Arabic, sans-serif', fontSize: '1rem' }}>
+                    <Typography variant="h6" component="span" sx={{ fontFamily: 'Noto Kufi Arabic, sans-serif', fontSize: '1rem', fontWeight: 'bold' }}>
                       {news.title}
                     </Typography>
                     <Typography variant="body2" color="text.secondary" sx={{ fontFamily: 'Noto Kufi Arabic, sans-serif', fontSize: '0.875rem', marginTop: '10px' }}>
                       {news.description}
                     </Typography>
-                    <Box mt={1}>
+                    <Box mt={2}>
                       <RouterLink to={`/blog/${news.title.replace(/\s+/g, '-').toLowerCase()}`} style={{ textDecoration: 'none' }}>
                         <Button
                           variant="contained"
@@ -173,9 +177,9 @@ export default function Blog() {
                             background: 'linear-gradient(90deg, #2196F3, #21CBF3)',
                             color: '#fff',
                             '&:hover': { background: '#115293' },
-                            padding: { xs: '6px 12px', sm: '8px 16px' },
+                            padding: { xs: '8px 16px', sm: '10px 20px' },
                             fontSize: { xs: '0.875rem', sm: '1rem' },
-                            borderRadius: '50px', // Rounded button
+                            borderRadius: '50px', // Rounded corners for the button
                             fontFamily: 'Noto Kufi Arabic, sans-serif',
                           }}
                           fullWidth
@@ -189,6 +193,7 @@ export default function Blog() {
               </Grid>
             ))}
           </Grid>
+          
           {/* Pagination Component */}
           <Box display="flex" justifyContent="center" sx={{ marginTop: 3 }}>
             <Pagination
