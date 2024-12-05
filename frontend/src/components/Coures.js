@@ -176,6 +176,7 @@ function Courses() {
         width: "100%",
         margin: "0 auto",
         marginBottom: "30px",
+        marginTop:'100px'
       }}
     >
       <Container maxWidth="xl" sx={{ padding: 3, paddingTop: "50px" }}>

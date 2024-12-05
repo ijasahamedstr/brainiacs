@@ -18,9 +18,8 @@ import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 
 const styles = {
   section: {
-    backgroundColor: "#f2f3f4",
     width: "100%",
-    margin: "0 auto",
+    marginTop:'150px'
   },
   breadcrumbs: {
     marginBottom: 2,
