@@ -383,7 +383,7 @@ function Coursedetails() {
                   style={{
                     marginBottom: '10px',
                     paddingLeft: '30px', // Adds padding to the left for the image
-                    background: "url('https://i.ibb.co/Bqx7CV6/images-removebg-preview.png') no-repeat left center", // Custom image URL
+                    background: "url('https://i.ibb.co/ZTbC4Sc/images-removebg-preview.png') no-repeat left center", // Custom image URL
                     backgroundSize: '20px 20px', // Size of the bullet image
                     listStyleType: 'none', // Remove default bullets
                   }}
@@ -394,7 +394,7 @@ function Coursedetails() {
                   style={{
                     marginBottom: '10px',
                     paddingLeft: '30px', // Adds padding to the left for the image
-                    background: "url('https://i.ibb.co/Bqx7CV6/images-removebg-preview.png') no-repeat left center", // Custom image URL
+                    background: "url('https://i.ibb.co/ZTbC4Sc/images-removebg-preview.png') no-repeat left center", // Custom image URL
                     backgroundSize: '20px 20px', // Size of the bullet image
                     listStyleType: 'none', // Remove default bullets
                   }}
@@ -405,7 +405,7 @@ function Coursedetails() {
                   style={{
                     marginBottom: '10px',
                     paddingLeft: '30px', // Adds padding to the left for the image
-                    background: "url('https://i.ibb.co/Bqx7CV6/images-removebg-preview.png') no-repeat left center", // Custom image URL
+                    background: "url('https://i.ibb.co/ZTbC4Sc/images-removebg-preview.png') no-repeat left center", // Custom image URL
                     backgroundSize: '20px 20px', // Size of the bullet image
                     listStyleType: 'none', // Remove default bullets
                   }}
@@ -415,7 +415,7 @@ function Coursedetails() {
                 <li
                   style={{
                     paddingLeft: '30px', // Adds padding to the left for the image
-                    background: "url('https://i.ibb.co/Bqx7CV6/images-removebg-preview.png') no-repeat left center", // Custom image URL
+                    background: "url('https://i.ibb.co/ZTbC4Sc/images-removebg-preview.png') no-repeat left center", // Custom image URL
                     backgroundSize: '20px 20px', // Size of the bullet image
                     listStyleType: 'none', // Remove default bullets
                   }}
@@ -447,7 +447,7 @@ function Coursedetails() {
                   style={{
                     marginBottom: '10px',
                     paddingLeft: '30px', // Adds padding so the image is not too close to the text
-                    background: "url('https://i.ibb.co/Bqx7CV6/images-removebg-preview.png') no-repeat left center", // Custom image URL
+                    background: "url('https://i.ibb.co/ZTbC4Sc/images-removebg-preview.png') no-repeat left center", // Custom image URL
                     backgroundSize: '20px 20px', // Size of the bullet image
                     listStyleType: 'none', // Remove default bullets
                   }}
@@ -458,7 +458,7 @@ function Coursedetails() {
                   style={{
                     marginBottom: '10px',
                     paddingLeft: '30px', // Adds padding so the image is not too close to the text
-                    background: "url('https://i.ibb.co/Bqx7CV6/images-removebg-preview.png') no-repeat left center", // Custom image URL
+                    background: "url('https://i.ibb.co/ZTbC4Sc/images-removebg-preview.png') no-repeat left center", // Custom image URL
                     backgroundSize: '20px 20px', // Size of the bullet image
                     listStyleType: 'none', // Remove default bullets
                   }}
@@ -469,7 +469,7 @@ function Coursedetails() {
                   style={{
                     marginBottom: '10px',
                     paddingLeft: '30px', // Adds padding so the image is not too close to the text
-                    background: "url('https://i.ibb.co/Bqx7CV6/images-removebg-preview.png') no-repeat left center", // Custom image URL
+                    background: "url('https://i.ibb.co/ZTbC4Sc/images-removebg-preview.png') no-repeat left center", // Custom image URL
                     backgroundSize: '20px 20px', // Size of the bullet image
                     listStyleType: 'none', // Remove default bullets
                   }}
@@ -480,7 +480,7 @@ function Coursedetails() {
                   style={{
                     marginBottom: '10px',
                     paddingLeft: '30px', // Adds padding so the image is not too close to the text
-                    background: "url('https://i.ibb.co/Bqx7CV6/images-removebg-preview.png') no-repeat left center", // Custom image URL
+                    background: "url('https://i.ibb.co/ZTbC4Sc/images-removebg-preview.png') no-repeat left center", // Custom image URL
                     backgroundSize: '20px 20px', // Size of the bullet image
                     listStyleType: 'none', // Remove default bullets
                   }}
@@ -491,7 +491,7 @@ function Coursedetails() {
                   style={{
                     marginBottom: '10px',
                     paddingLeft: '30px', // Adds padding so the image is not too close to the text
-                    background: "url('https://i.ibb.co/Bqx7CV6/images-removebg-preview.png') no-repeat left center", // Custom image URL
+                    background: "url('https://i.ibb.co/ZTbC4Sc/images-removebg-preview.png') no-repeat left center", // Custom image URL
                     backgroundSize: '20px 20px', // Size of the bullet image
                     listStyleType: 'none', // Remove default bullets
                   }}
@@ -527,7 +527,7 @@ function Coursedetails() {
                 style={{
                   marginBottom: '10px',
                   paddingLeft: '30px', // Adds padding so the image is not too close to the text
-                  background: "url('https://i.ibb.co/Bqx7CV6/images-removebg-preview.png') no-repeat left center", // Add the image URL here
+                  background: "url('https://i.ibb.co/ZTbC4Sc/images-removebg-preview.png') no-repeat left center", // Add the image URL here
                   backgroundSize: '20px 20px', // Medium size for the bullet image
                   listStyleType: 'none', // Remove default bullets
                 }}
@@ -538,7 +538,7 @@ function Coursedetails() {
                 style={{
                   marginBottom: '10px',
                   paddingLeft: '30px',
-                  background: "url('https://i.ibb.co/Bqx7CV6/images-removebg-preview.png') no-repeat left center",
+                  background: "url('https://i.ibb.co/ZTbC4Sc/images-removebg-preview.png') no-repeat left center",
                   backgroundSize: '20px 20px', // Medium size for the bullet image
                   listStyleType: 'none',
                 }}
@@ -549,7 +549,7 @@ function Coursedetails() {
                 style={{
                   marginBottom: '10px',
                   paddingLeft: '30px',
-                  background: "url('https://i.ibb.co/Bqx7CV6/images-removebg-preview.png') no-repeat left center",
+                  background: "url('https://i.ibb.co/ZTbC4Sc/images-removebg-preview.png') no-repeat left center",
                   backgroundSize: '20px 20px', // Medium size for the bullet image
                   listStyleType: 'none',
                 }}
@@ -560,7 +560,7 @@ function Coursedetails() {
                 style={{
                   marginBottom: '10px',
                   paddingLeft: '30px',
-                  background: "url('https://i.ibb.co/Bqx7CV6/images-removebg-preview.png') no-repeat left center",
+                  background: "url('https://i.ibb.co/ZTbC4Sc/images-removebg-preview.png') no-repeat left center",
                   backgroundSize: '20px 20px', // Medium size for the bullet image
                   listStyleType: 'none',
                 }}
@@ -570,7 +570,7 @@ function Coursedetails() {
               <li
                 style={{
                   paddingLeft: '30px',
-                  background: "url('https://i.ibb.co/Bqx7CV6/images-removebg-preview.png') no-repeat left center",
+                  background: "url('https://i.ibb.co/ZTbC4Sc/images-removebg-preview.png') no-repeat left center",
                   backgroundSize: '20px 20px', // Medium size for the bullet image
                   listStyleType: 'none',
                 }}
