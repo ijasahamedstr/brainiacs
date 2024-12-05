@@ -65,7 +65,7 @@ function ResponsiveAppBar() {
   );
 
   return (
-    <AppBar position="static" sx={{ background: '#000', height: '100px' }} dir="ltr">
+    <AppBar position="fixed" sx={{ background: '#000', height: '100px' }} dir="ltr">
       <Container
         maxWidth="xxl"
         sx={{
