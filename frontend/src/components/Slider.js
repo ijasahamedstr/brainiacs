@@ -37,7 +37,7 @@ const FadeCarousel = () => {
                 alt={item.title}
                 style={{
                   width: '100%', // Ensure image takes the full width of its container
-                  height: '70vh', // Adjust height as needed (you can also use '100%' or specific px values)
+                  height: '80vh', // Adjust height as needed (you can also use '100%' or specific px values)
                   objectFit: 'cover', // Ensures image covers the area without distortion
                 }}
               />
