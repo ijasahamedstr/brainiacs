@@ -11,6 +11,7 @@ import Aboutus from './components/About';
 import Coures from './components/Coures';
 import Coursedetails from './components/course-details';
 import Contactus from './components/Contact';
+import Blog from './components/Blog';
 
 
 const theme = createTheme({
@@ -30,6 +31,7 @@ function App() {
         <Route path="/about" element={<Aboutus/>} />
         <Route path="/course-details" element={<Coursedetails/>} />
         <Route path="/Contact" element={<Contactus/>} />
+        <Route path="/Blog" element={<Blog/>} />
       </Routes>
       <Footer/>
     </Router>
