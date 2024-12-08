@@ -31,7 +31,7 @@ function OurSchools() {
                 fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
               }}
             >
-              Our <span style={{ color: "#0073e6" }}>Schools</span>
+              Our <span style={{ color: "#0073e6" }}>Department</span>
             </Typography>
             <hr
               style={{
@@ -67,7 +67,7 @@ function OurSchools() {
                 },
               }}
             >
-              View Our Schools
+              View Our Department
             </Button>
           </Grid>
         </Grid>
