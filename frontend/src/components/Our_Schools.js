@@ -7,7 +7,7 @@ function OurSchools() {
     <section
       style={{
         backgroundColor: '#f2f3f4',
-        backgroundImage: 'url(https://i.ibb.co/cTJ92rZ/16991932-1.jpg)', 
+        backgroundImage: 'url(https://i.ibb.co/RpjQYqP/4376.jpg)', 
         backgroundSize: 'cover',
         backgroundPosition: 'center center',
         backgroundRepeat: 'no-repeat',
@@ -27,11 +27,11 @@ function OurSchools() {
               sx={{
                 fontFamily: "Noto Kufi Arabic, sans-serif",
                 fontWeight: "bold",
-                color: "#333",
+                color: "#17202a",
                 fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
               }}
             >
-              Our <span style={{ color: "#0073e6" }}>Department</span>
+              Our <span style={{ color: "#FFFFFF" }}>Department</span>
             </Typography>
             <hr
               style={{
@@ -46,7 +46,7 @@ function OurSchools() {
 
           {/* Right Column (70% width) */}
           <Grid item xs={12} sm={8}>
-            <Typography variant="body1" sx={{ marginTop: 2, fontFamily: "Noto Kufi Arabic", fontSize: { xs: '1rem', sm: '1.3rem' } }}>
+            <Typography variant="body1" sx={{ marginTop: 2, fontFamily: "Noto Kufi Arabic",color:'#FFFFFF', fontSize: { xs: '1rem', sm: '1.3rem' } }}>
               Join us in this diverse and enriching academic landscape, where each school is a gateway to a world of endless possibilities. Your journey to unparalleled excellence begins here!
             </Typography>
 

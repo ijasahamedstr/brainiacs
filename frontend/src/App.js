@@ -12,6 +12,8 @@ import Coures from './components/Coures';
 import Coursedetails from './components/course-details';
 import Contactus from './components/Contact';
 import Blog from './components/Blog';
+import Registration from './components/Registration';
+import BlogView from './components/BlogView';
 
 
 const theme = createTheme({
@@ -32,6 +34,8 @@ function App() {
         <Route path="/course-details" element={<Coursedetails/>} />
         <Route path="/Contact" element={<Contactus/>} />
         <Route path="/Blog" element={<Blog/>} /> 
+        <Route path="/register" element={<Registration/>} /> 
+        <Route path="/BlogView" element={<BlogView/>} /> 
       </Routes>
       <Footer/>
     </Router>

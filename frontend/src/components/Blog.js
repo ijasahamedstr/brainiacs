@@ -170,7 +170,7 @@ export default function Blog() {
                       {news.description}
                     </Typography>
                     <Box mt={2}>
-                      <RouterLink to={`/blog/${news.title.replace(/\s+/g, '-').toLowerCase()}`} style={{ textDecoration: 'none' }}>
+                      <RouterLink to={`/BlogView`} style={{ textDecoration: 'none' }}>
                         <Button
                           variant="contained"
                           sx={{
