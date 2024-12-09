@@ -45,7 +45,7 @@ function News() {
         backgroundRepeat: 'no-repeat',
         width: '100%',
         margin: '0 auto',
-        marginTop: '-30px',
+        marginTop: '-50px',
         padding: '50px 0',
       }}
     >

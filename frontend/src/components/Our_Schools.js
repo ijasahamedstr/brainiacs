@@ -15,6 +15,7 @@ function OurSchools() {
         margin: '0 auto',
         marginTop: '-30px',
         padding: '50px 0',
+        marginBottom:'50px'
       }}
     >
       <Container maxWidth="xl" sx={{ padding: 3, paddingTop: '50px' }}>
