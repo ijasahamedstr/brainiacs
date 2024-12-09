@@ -11,7 +11,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
 
-const pages1 = ['Courses','About','Blog','Contact']; // Pages
+const pages1 = ['Courses','Department','About','Blog','Contact']; // Pages
 
 function ResponsiveAppBar() {
   const [drawerOpen, setDrawerOpen] = React.useState(false);

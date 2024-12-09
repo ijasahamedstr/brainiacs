@@ -14,6 +14,7 @@ import Contactus from './components/Contact';
 import Blog from './components/Blog';
 import Registration from './components/Registration';
 import BlogView from './components/BlogView';
+import Department from './components/Department';
 
 
 const theme = createTheme({
@@ -35,7 +36,8 @@ function App() {
         <Route path="/Contact" element={<Contactus/>} />
         <Route path="/Blog" element={<Blog/>} /> 
         <Route path="/register" element={<Registration/>} /> 
-        <Route path="/BlogView" element={<BlogView/>} /> 
+        <Route path="/BlogView" element={<BlogView/>} />
+        <Route path="/Department" element={<Department/>} />  
       </Routes>
       <Footer/>
     </Router>
