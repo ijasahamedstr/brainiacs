@@ -1,23 +1,26 @@
-import React from 'react';
-import { Container, Box, Typography, Card, CardContent, CardMedia } from '@mui/material';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css'; // Swiper core styles
-import 'swiper/css/navigation'; // Navigation styles
-import 'swiper/css/pagination'; // Pagination styles
+import React, { useState } from 'react';
+import { Container, Box, Typography, Card, CardContent, CardMedia, AppBar, Tabs, Tab, Grid } from '@mui/material';
 
 function VisionSection() {
+  const [tabValue, setTabValue] = useState(0);
+
   const events = [
     {
       title: 'Our Vision',
       description: 'To emerge as the most sought-after education and training partner in the region by making a meaningful contribution towards building a knowledgeable society.',
       image: 'https://i.ibb.co/Ry1Zj2h/ban.png',
     },
-    {
-      title: 'Our Mission',
-      description: 'To emerge as the most sought-after education and training partner in the region by making a meaningful contribution towards building a knowledgeable society.',
-      image: 'https://i.ibb.co/Ry1Zj2h/ban.png',
-    },
   ];
+
+  const tabContent = [
+    { label: 'Vision', content: 'To emerge as the most sought-after education and training partner in the region.' },
+    { label: 'Mission', content: 'Our mission is to build a knowledgeable society through impactful education and training.' },
+    // Add more tabs as needed
+  ];
+
+  const handleTabChange = (event, newValue) => {
+    setTabValue(newValue);
+  };
 
   return (
     <section
@@ -29,13 +32,13 @@ function VisionSection() {
         backgroundPosition: 'center',
         width: '100%',
         margin: '0 auto',
-        marginBottom: '30px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         paddingTop: '50px',
         marginTop: '-30px',
         position: 'relative',
+        marginBottom:'30px'
       }}
     >
       {/* Background overlay */}
@@ -61,89 +64,98 @@ function VisionSection() {
           zIndex: 2,
         }}
       >
-        <Swiper spaceBetween={30} slidesPerView={1} loop>
-          {events.map((event, index) => (
-            <SwiperSlide key={index}>
-              <Card
-                sx={{
-                  display: 'flex',
-                  flexDirection: { xs: 'column-reverse', sm: 'row' }, // Stack on mobile, row on larger screens
-                  borderRadius: '8px',
-                  boxShadow: 3,
-                  backgroundColor: 'transparent',
-                  border: 'none',
-                  outline: 'none',
-                  width: '100%',
-                  margin: '0 auto',
-                }}
-              >
-                {/* Image part */}
-                <CardMedia
-                  component="img"
-                  sx={{
-                    width: { xs: '100%', sm: '50%' }, // Full width on small screens, 50% on larger screens
-                    height: { xs: 200, sm: 'auto' }, // Fixed height for small screens, auto for large
-                    objectFit: 'cover',
-                    border: 'none',
-                    outline: 'none',
-                    borderRadius: '8px',
-                  }}
-                  image={event.image}
-                  alt={event.title}
-                  loading="lazy"
-                />
-                {/* Text part */}
-                <Box
-                  sx={{
-                    width: { xs: '100%', sm: '50%' },
-                    textAlign: { xs: 'center', sm: 'left' }, // Center text on mobile, left-align on larger screens
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    paddingLeft: 2,
-                    paddingRight: 2,
-                    paddingTop: { xs: 2, sm: 0 },
-                  }}
+        {events.map((event, index) => (
+          <Card
+            key={index}
+            sx={{
+              display: 'flex',
+              flexDirection: { xs: 'column-reverse', sm: 'row' }, // Stack on mobile, row on larger screens
+              borderRadius: '8px',
+              boxShadow: 3,
+              backgroundColor: 'transparent',
+              border: 'none', // Ensure card has no border
+              outline: 'none', // Ensure no outline
+              width: '100%',
+              margin: '0 auto',
+            }}
+          >
+            {/* Image part */}
+            <CardMedia
+              component="img"
+              sx={{
+                width: { xs: '100%', sm: '50%' }, // Full width on small screens, 50% on larger screens
+                height: { xs: 200, sm: 'auto' }, // Fixed height for small screens, auto for large
+                objectFit: 'cover',
+                border: 'none', // Ensure no border on the image
+                outline: 'none', // Ensure no outline on the image
+                borderRadius: '8px',
+              }}
+              image={event.image}
+              alt={event.title}
+              loading="lazy"
+            />
+            {/* Text part */}
+            <Box
+              sx={{
+                width: { xs: '100%', sm: '50%' },
+                textAlign: { xs: 'center', sm: 'left' }, // Center text on mobile, left-align on larger screens
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                paddingLeft: 2,
+                paddingRight: 2,
+                paddingTop: { xs: 2, sm: 0 },
+              }}
+            >
+              {/* Tabbed Navigation */}
+              <AppBar position="static" sx={{ backgroundColor: "#fff", boxShadow: "none" }}>
+                <Tabs
+                  value={tabValue}
+                  onChange={handleTabChange}
+                  textColor="primary"
+                  indicatorColor="primary"
+                  variant="fullWidth"
                 >
-                  <CardContent sx={{ height: '100%' }}>
-                    {/* Title with larger and customized font */}
-                    <Typography
+                  {tabContent.map((tab, index) => (
+                    <Tab
+                      key={index}
+                      label={tab.label}
                       sx={{
-                        fontSize: { xs: '1.5rem', sm: '1.75rem', md: '2.25rem' },
-                        fontWeight: 'bold',
-                        color: '#0073e6',
-                        fontFamily: "Noto Kufi Arabic",
-                        textTransform: 'uppercase',
-                        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)', // Black outline shadow for title
-                        lineHeight: 1.2, // Adjust line height to prevent overflow
+                        backgroundColor: tabValue === index
+                          ? '#17202a'  // Active tab color
+                          : 'transparent',
+                        color: tabValue === index ? '#fff' : '#17202a',
+                        fontWeight: 600,
+                        '&:hover': {
+                          backgroundColor: tabValue === index
+                            ? '#17202a'  // Active tab remains the same on hover
+                            : '#f0f0f0',  // Hover effect for inactive tabs
+                        },
                       }}
-                      gutterBottom
-                    >
-                      {event.title}
-                    </Typography>
-                    {/* Description with responsive font size */}
-                    <Typography
-                      variant="body1"
-                      sx={{
-                        fontSize: { xs: '1.2rem', sm: '1.5rem', md: '1.75rem' },
-                        color: '#fff',
-                        fontFamily: "Noto Kufi Arabic",
-                        lineHeight: '1.6',
-                        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)', // Black outline shadow for description
-                        paddingLeft: { xs: 0, sm: 0 }, // Padding adjustment for mobile view
-                        paddingRight: { xs: 0, sm: 0 }, // Padding adjustment for mobile view
-                      
-                      }}
-                      paragraph
-                    >
-                      {event.description}
-                    </Typography>
-                  </CardContent>
-                </Box>
-              </Card>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+                    />
+                  ))}
+                </Tabs>
+              </AppBar>
+              {/* Tab Content */}
+              <Box sx={{ padding: 2 }}>
+                {tabContent[tabValue] && (
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      textAlign: "center",
+                      fontFamily: 'Noto Kufi Arabic',
+                      marginTop: '50px',
+                      fontWeight: '600',
+                      color:'#ffff'
+                    }}
+                  >
+                    {tabContent[tabValue].content}
+                  </Typography>
+                )}
+              </Box>
+            </Box>
+          </Card>
+        ))}
       </Container>
     </section>
   );
