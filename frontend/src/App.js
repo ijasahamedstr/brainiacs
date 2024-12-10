@@ -15,6 +15,7 @@ import Blog from './components/Blog';
 import Registration from './components/Registration';
 import BlogView from './components/BlogView';
 import Department from './components/Department';
+import DepartmentView from './components/DepartmentView';
 
 
 const theme = createTheme({
@@ -37,7 +38,8 @@ function App() {
         <Route path="/Blog" element={<Blog/>} /> 
         <Route path="/register" element={<Registration/>} /> 
         <Route path="/BlogView" element={<BlogView/>} />
-        <Route path="/Department" element={<Department/>} />  
+        <Route path="/Department" element={<Department/>} /> 
+        <Route path="/DepartmentView" element={<DepartmentView/>} />  
       </Routes>
       <Footer/>
     </Router>

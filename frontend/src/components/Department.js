@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Breadcrumbs, Link, Card, CardContent, CardMedia, Typography, Grid, Box, Button, Pagination } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
-import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 
 export default function Department() {
   const newsItems = [
@@ -201,7 +200,7 @@ export default function Department() {
                       {news.description}
                     </Typography>
                     <Box mt={2}>
-                      <RouterLink to={`/BlogView`} style={{ textDecoration: 'none' }}>
+                      <RouterLink to={`/DepartmentView`} style={{ textDecoration: 'none' }}>
                         <Button
                           variant="contained"
                           sx={{
