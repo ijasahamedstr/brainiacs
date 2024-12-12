@@ -1,5 +1,5 @@
 import bcrypt from 'bcrypt'; // Make sure bcrypt is imported
-import AccountRegisterAdmin from "../../models/Admin/AccountRegisterAdmin.models.js";
+import AccountRegisterAdmin from '../models/AccountRegisterAdmin.models.js';
 
 export const AccountCreatAdmin = async (req, res) => {
   const { name, email, password } = req.body;

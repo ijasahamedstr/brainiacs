@@ -5,7 +5,7 @@ import cors from "cors";
 import cookiParser from "cookie-parser";
 import path from 'path';
 import AccountAdminloginrouter from './routes/AccountLogin.route.js';
-import WebsiteSliderrouter from "./routes/WebsiteSlider.route.js";
+import AccountAdminrouter from "./routes/AccountRegisterAdmin.route.js";
 
 
 
@@ -40,14 +40,13 @@ app.use(express.urlencoded({extended:true}))
 //ADMIN -> MIDDLEWARE -> SERVER
 app.use('/Adminlogin', AccountAdminloginrouter);
 
-app.use('/WebsiteSlider',WebsiteSliderrouter);
+app.use('/Adminregister',AccountAdminrouter);
 
 
-// Get __dirname equivalent for ES modules
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-app.use('/uploads/AccountActive', express.static(path.join(__dirname, 'uploads/AccountActive')));
-app.use('/uploads/Categories', express.static(path.join(__dirname, 'uploads/Categories')));
+// // Get __dirname equivalent for ES modules
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
+// app.use('/uploads/Categories', express.static(path.join(__dirname, 'uploads/Categories')));
 
 
 // Start the Express server
