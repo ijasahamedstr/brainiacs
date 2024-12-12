@@ -1,31 +1,20 @@
 import moment from 'moment';
-import Categories from '../../models/Admin/Categories.models.js';
+import WebsiteSlider from '../models/WebsiteSlider.models.js';  // Corrected import
+
 
 // All Account Create
-export const Categoriescreate = async (req, res) => {
+export const WebsiteSlidercreate = async (req, res) => {
     const { filename } = req.file;
-    const { Categorie, Categoriedec, Categoriesstatus } = req.body;
 
     // Check if all required fields are provided
-    if (!Categorie || !Categoriedec || !Categoriesstatus || !filename) {
+    if (!filename) {
         return res.status(400).json({ status: 400, message: 'Please fill all the data' });
     }
 
     try {
-        // Check if the email already exists in the database
-        const existingUser = await Categories.findOne({ Categorie });
-
-        if (existingUser) {
-            return res.status(400).json({ status: 400, message: 'Categorie is already registered' });
-        }
-
-        // If email doesn't exist, create a new user
         const date = moment().format('YYYY-MM-DD');
 
-        const userdata = new Categories({
-            Categorie,
-            Categoriedec,
-            Categoriesstatus,
+        const userdata = new WebsiteSlider({
             imgpath: filename,
             date
         });
@@ -40,8 +29,9 @@ export const Categoriescreate = async (req, res) => {
     }
 };
 
+
 // All Acccount View 
-export const CategoriesIndex = async (req, res) => {
+export const WebsiteSliderIndex = async (req, res) => {
     try {
         const CategoriesView = await Categories.find();
         res.json(CategoriesView);
@@ -53,7 +43,7 @@ export const CategoriesIndex = async (req, res) => {
 
 // All Acccount Delete
 
-export const CategoriesDelete = async (req, res) => {
+export const WebsiteSliderDelete = async (req, res) => {
     const CategoriesDeleteId =  req.params.id;
     
     try {
@@ -68,7 +58,7 @@ export const CategoriesDelete = async (req, res) => {
  
 // single Acccount View 
 
-export const CategoriesSingleDetails = async (req, res) => {
+export const WebsiteSliderSingleDetails = async (req, res) => {
     try {
         const CategoriesView = await Categories.findById(req.params.id);
         if (CategoriesView == null) {
@@ -87,7 +77,7 @@ export const CategoriesSingleDetails = async (req, res) => {
 
  // All Acccount Update
 
-export const CategoriesUpdate  = async (req, res) => {
+export const WebsiteSliderUpdate  = async (req, res) => {
 
     const { id } = req.params;
     const { Categorie } = req.body;

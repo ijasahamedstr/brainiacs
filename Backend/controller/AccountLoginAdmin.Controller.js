@@ -1,6 +1,6 @@
 import bcrypt from 'bcrypt'; // Import bcrypt
 import jwt from 'jsonwebtoken'; // Import jsonwebtoken
-import AccountRegisterAdmin from '../../models/Admin/AccountRegisterAdmin.models.js'; // Your model
+import AccountRegisterAdmin from '../models/AccountRegisterAdmin.models.js'; // Your model
 import dotenv from 'dotenv'; // Import dotenv for environment variables
 
 // Load environment variables from .env file

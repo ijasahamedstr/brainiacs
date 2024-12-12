@@ -133,16 +133,7 @@ function WebsiteSliderAdd() {
               {/* Form for adding category */}
               <MDBox pt={3} px={2} sx={{ paddingBottom: "24px" }}>
                 <form onSubmit={handleSubmit}>
-                  <TextField
-                    label="Website Slider"
-                    variant="outlined"
-                    fullWidth
-                    sx={{ mb: 2 }}
-                    name="Categorie"
-                    value={Categorie}
-                    onChange={handleChange}
-                  />
-
+                  
                   {/* Image Upload Button */}
                   <label htmlFor="file-upload">
                     <input

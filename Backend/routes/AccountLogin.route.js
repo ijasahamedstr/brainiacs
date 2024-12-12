@@ -1,6 +1,6 @@
 // Import required modules
 import express from "express";
-import { AccountLoginAdmin } from "../../controller/Admin/AccountLoginAdmin.Controller.js";
+import { AccountLoginAdmin } from "../controller/AccountLoginAdmin.Controller.js";
 
 
 const AccountAdminloginrouter = express.Router()

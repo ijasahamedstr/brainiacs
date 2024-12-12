@@ -4,10 +4,8 @@ import connectDB from "./lib/db.js";
 import cors from "cors";
 import cookiParser from "cookie-parser";
 import path from 'path';
-import { fileURLToPath } from 'url';
-import AccountAdminrouter from './routes/Admin/AccountRegisterAdmin.route.js';
-import AccountAdminloginrouter from './routes/Admin/AccountLogin.route.js';
-import WebsiteSliderrouter from "./routes/Admin/WebsiteSlider.route.js";
+import AccountAdminloginrouter from './routes/AccountLogin.route.js';
+import WebsiteSliderrouter from "./routes/WebsiteSlider.route.js";
 
 
 
@@ -40,8 +38,6 @@ app.use(express.urlencoded({extended:true}))
 
 
 //ADMIN -> MIDDLEWARE -> SERVER
-app.use('/Adminregister',AccountAdminrouter);
-
 app.use('/Adminlogin', AccountAdminloginrouter);
 
 app.use('/WebsiteSlider',WebsiteSliderrouter);

@@ -1,13 +1,14 @@
 import express from 'express';
 import multer from 'multer';
+import { Categoriescreate, CategoriesDelete, CategoriesIndex, CategoriesSingleDetails, CategoriesUpdate,  } from '../controller/Categories.Controller.js';
 
 // Create a new router instance
-const WebsiteSliderrouter = express.Router();
+const Categoriesrouter = express.Router();
 
 // Image storage configuration
 const imgconfig = multer.diskStorage({
     destination: (req, file, callback) => {
-        callback(null, './uploads/Slider');
+        callback(null, './uploads/Categories');
     },
     filename: (req, file, callback) => {
         callback(null, `image-${Date.now()}.${file.originalname}`);
@@ -29,17 +30,17 @@ const upload = multer({
 });
 
 // Define the POST route with file upload and Image handler
-WebsiteSliderrouter.post('/', upload.single('photo'), );
+Categoriesrouter.post('/', upload.single('photo'),Categoriescreate );
 
-WebsiteSliderrouter.get('/', );
+Categoriesrouter.get('/', CategoriesIndex);
 
-WebsiteSliderrouter.delete('/:id', );
+Categoriesrouter.delete('/:id', CategoriesDelete);
 
-WebsiteSliderrouter.put('/:id',upload.single('photo'), );
+Categoriesrouter.put('/:id',upload.single('photo'), CategoriesUpdate);
 
-WebsiteSliderrouter.get("/:id", )
-
-
+Categoriesrouter.get("/:id", CategoriesSingleDetails)
 
 
-export default WebsiteSliderrouter;
+
+
+export default Categoriesrouter;
