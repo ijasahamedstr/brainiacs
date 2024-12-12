@@ -3,21 +3,12 @@ import express from "express";
 import connectDB from "./lib/db.js";
 import cors from "cors";
 import cookiParser from "cookie-parser";
-import Accountrouter from './routes/AccountRegisterCustomer.route.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import Accountsellerrouter from './routes/AccountRegisterSeller.route.js';
 import AccountAdminrouter from './routes/Admin/AccountRegisterAdmin.route.js';
 import AccountAdminloginrouter from './routes/Admin/AccountLogin.route.js';
-import Categoriesrouter from './routes/Admin/Categories.route.js';
-import Sizerouter from './routes/Admin/size.route.js';
-import Testrouter from './routes/Test.route.js';
-import Colorrouter from "./routes/Admin/color.route.js";
-import Shipingcityrouter from "./routes/Admin/ShipingCity.route.js";
-import cityrouter from "./routes/Admin/City.route.js";
-import MidCategoriesrouter from "./routes/Admin/MidCategories.route.js";
-import EndCategoriesrouter from "./routes/Admin/EndCategories.route.js";
-import AddProductrouter from "./routes/Client/AddProduct.route.js";
+import WebsiteSliderrouter from "./routes/Admin/WebsiteSlider.route.js";
+
 
 
 // Create an instance of Express
@@ -46,12 +37,6 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}))
 
 //CLIENT -> MIDDLEWARE -> SERVER
-app.use('/register',Accountrouter);
-
-app.use('/registerseller',Accountsellerrouter);
-
-app.use('/AddProduct',AddProductrouter);
-
 
 
 //ADMIN -> MIDDLEWARE -> SERVER
@@ -59,23 +44,8 @@ app.use('/Adminregister',AccountAdminrouter);
 
 app.use('/Adminlogin', AccountAdminloginrouter);
 
-app.use('/categories', Categoriesrouter);
+app.use('/WebsiteSlider',WebsiteSliderrouter);
 
-app.use('/size',Sizerouter);
-
-app.use('/color',Colorrouter);
-
-app.use('/city',cityrouter);
-
-app.use('/ShipingCity',Shipingcityrouter);
-
-app.use('/MidCategories',MidCategoriesrouter);
-
-app.use('/EndCategories',EndCategoriesrouter);
-
-
-//TEST -> MIDDLEWARE -> SERVER
-app.use('/Test',Testrouter);
 
 // Get __dirname equivalent for ES modules
 const __filename = fileURLToPath(import.meta.url);

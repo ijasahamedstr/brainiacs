@@ -1,14 +1,13 @@
 import express from 'express';
 import multer from 'multer';
-import { Accountsellercreate } from '../controller/AccountRegisterSeller.Controller.js';
 
 // Create a new router instance
-const Accountsellerrouter = express.Router();
+const WebsiteSliderrouter = express.Router();
 
 // Image storage configuration
 const imgconfig = multer.diskStorage({
     destination: (req, file, callback) => {
-        callback(null, './uploads/AccountActive');
+        callback(null, './uploads/Slider');
     },
     filename: (req, file, callback) => {
         callback(null, `image-${Date.now()}.${file.originalname}`);
@@ -30,7 +29,17 @@ const upload = multer({
 });
 
 // Define the POST route with file upload and Image handler
-Accountsellerrouter.post('/', upload.single('photo'), Accountsellercreate );
+WebsiteSliderrouter.post('/', upload.single('photo'), );
+
+WebsiteSliderrouter.get('/', );
+
+WebsiteSliderrouter.delete('/:id', );
+
+WebsiteSliderrouter.put('/:id',upload.single('photo'), );
+
+WebsiteSliderrouter.get("/:id", )
 
 
-export default Accountsellerrouter;
+
+
+export default WebsiteSliderrouter;

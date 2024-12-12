@@ -5,25 +5,18 @@ import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
-import InputLabel from "@mui/material/InputLabel";
-import FormControl from "@mui/material/FormControl";
-import { Editor } from "@tinymce/tinymce-react";
-
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 
-function AddCategories() {
+function WebsiteSliderAdd() {
   const [loading, setLoading] = useState(false);
   const [imagePreview, setImagePreview] = useState(null);
   const [Categorie, setCategorie] = useState("");
   const [Categoriedec, setCategoriedec] = useState("");
   const [Categoriesstatus, setCategoriesstatus] = useState("");
   const [file, setFile] = useState(null);
-  const editorRef = useRef(null);
 
   // Handle input field changes
   const handleChange = (e) => {
@@ -133,7 +126,7 @@ function AddCategories() {
                 alignItems="center"
               >
                 <MDTypography variant="h6" color="white">
-                  Add New Category
+                  Add New Website Slider
                 </MDTypography>
               </MDBox>
 
@@ -141,7 +134,7 @@ function AddCategories() {
               <MDBox pt={3} px={2} sx={{ paddingBottom: "24px" }}>
                 <form onSubmit={handleSubmit}>
                   <TextField
-                    label="Category Name"
+                    label="Website Slider"
                     variant="outlined"
                     fullWidth
                     sx={{ mb: 2 }}
@@ -149,60 +142,6 @@ function AddCategories() {
                     value={Categorie}
                     onChange={handleChange}
                   />
-
-                  <Editor
-                    apiKey="hkk12ec9ohtvvpvn8nqjjmlq7gec9klnt54dk767ewll5f09"
-                    value={Categoriedec}
-                    onEditorChange={handleEditorChange}
-                    init={{
-                      height: 500,
-                      menubar: false,
-                      plugins: [
-                        "a11ychecker",
-                        "advlist",
-                        "advcode",
-                        "advtable",
-                        "autolink",
-                        "checklist",
-                        "export",
-                        "lists",
-                        "link",
-                        "image",
-                        "charmap",
-                        "preview",
-                        "anchor",
-                        "searchreplace",
-                        "visualblocks",
-                        "powerpaste",
-                        "fullscreen",
-                        "formatpainter",
-                        "insertdatetime",
-                        "media",
-                        "table",
-                        "help",
-                        "wordcount",
-                      ],
-                      toolbar:
-                        "undo redo | casechange blocks | bold italic backcolor | " +
-                        "alignleft aligncenter alignright alignjustify | " +
-                        "bullist numlist checklist outdent indent | removeformat | a11ycheck code table help",
-                      content_style:
-                        "body { font-family:Helvetica,Arial,sans-serif; font-size:14px, margin-bottom: 30px; }",
-                    }}
-                  />
-                  <FormControl fullWidth sx={{ mb: 2 }}>
-                    <InputLabel>Show on Menu?</InputLabel>
-                    <Select
-                      label="Show on Menu?"
-                      sx={{ height: "40px" }}
-                      name="Categoriesstatus"
-                      value={Categoriesstatus}
-                      onChange={handleChange}
-                    >
-                      <MenuItem value="Yes">Yes</MenuItem>
-                      <MenuItem value="No">No</MenuItem>
-                    </Select>
-                  </FormControl>
 
                   {/* Image Upload Button */}
                   <label htmlFor="file-upload">
@@ -280,4 +219,4 @@ function AddCategories() {
   );
 }
 
-export default AddCategories;
+export default WebsiteSliderAdd;
