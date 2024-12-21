@@ -49,8 +49,8 @@ Job.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
-function WebsiteSlider() {
-  const [ShipingCity, setShipingCity] = useState([]);
+function Team() {
+  const [Color, setColor] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -58,8 +58,8 @@ function WebsiteSlider() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_HOST}/ShipingCity`);
-        setShipingCity(response.data); // Set the fetched categories
+        const response = await axios.get(`${process.env.REACT_APP_API_HOST}/Team`);
+        setColor(response.data); // Set the fetched categories
       } catch (error) {
         console.error("Error fetching data: ", error);
         setError("Failed to fetch categories");
@@ -76,7 +76,7 @@ function WebsiteSlider() {
 
   // Define the columns for the DataTable
   const columns = [
-    { Header: "WebsiteSlider", accessor: "WebsiteSlider", align: "left" },
+    { Header: "color", accessor: "color", align: "left" },
     { Header: "Action", accessor: "action", align: "center" },
   ];
 
@@ -94,8 +94,8 @@ function WebsiteSlider() {
 
     if (result.isConfirmed) {
       try {
-        await axios.delete(`${process.env.REACT_APP_API_HOST}/ShipingCity/${id}`);
-        setShipingCity(ShipingCity.filter((shipingCity) => shipingCity._id !== id)); // Update local state after deletion
+        await axios.delete(`${process.env.REACT_APP_API_HOST}/color/${id}`);
+        setColor(Color.filter((color) => color._id !== id)); // Update local state after deletion
         Swal.fire("Deleted!", "Your category has been deleted.", "success");
       } catch (error) {
         console.error("Error deleting category: ", error);
@@ -106,8 +106,8 @@ function WebsiteSlider() {
   };
 
   // Map through the Categories data to build rows
-  const rows = ShipingCity.map((item) => ({
-    WebsiteSlider: <Author name={item.city} />,
+  const rows = Color.map((item) => ({
+    color: <Author name={item.color} />,
     action: (
       <MDBox display="flex" justifyContent="center" alignItems="center" gap={2}>
         {/* Edit button with icon */}
@@ -176,9 +176,9 @@ function WebsiteSlider() {
                 alignItems="center"
               >
                 <MDTypography variant="h6" color="white">
-                  Categories Table
+                  Team Table
                 </MDTypography>
-                <Link to="/WebsiteSliderAdd">
+                <Link to="/new-Team">
                   <Button
                     variant="contained"
                     color="primary"
@@ -215,4 +215,4 @@ function WebsiteSlider() {
   );
 }
 
-export default WebsiteSlider;
+export default Team;

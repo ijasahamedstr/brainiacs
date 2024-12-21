@@ -49,8 +49,8 @@ function Dashboard() {
               <MDBox mb={1.5}>
                 <ComplexStatisticsCard
                   icon={<ShoppingCart />}
-                  title="Courses"
-                  count={0}
+                  title="Products"
+                  count={281}
                   color="primary"
                 />
               </MDBox>
@@ -61,8 +61,8 @@ function Dashboard() {
               <MDBox mb={1.5}>
                 <ComplexStatisticsCard
                   icon={<HourglassEmptyIcon />}
-                  title="Department"
-                  count="0"
+                  title="Pending Orders"
+                  count="23"
                   color="warning"
                 />
               </MDBox>
@@ -74,8 +74,8 @@ function Dashboard() {
                 <ComplexStatisticsCard
                   color="success"
                   icon={<Storefront />}
-                  title="Team"
-                  count="0"
+                  title="Completed Orders"
+                  count="345"
                 />
               </MDBox>
             </Grid>
@@ -86,8 +86,8 @@ function Dashboard() {
                 <ComplexStatisticsCard
                   color="error"
                   icon={<DeliveryDiningIcon />}
-                  title="News"
-                  count="0"
+                  title="Completed Shipping"
+                  count="91"
                 />
               </MDBox>
             </Grid>
@@ -97,7 +97,7 @@ function Dashboard() {
               <MDBox mb={1.5}>
                 <ComplexStatisticsCard
                   icon={<PersonAdd />}
-                  title="Student testimonials"
+                  title="Active Customers"
                   count={citiesCount || 0} // Fallback to 0 if citiesCount is invalid
                   color="info"
                 />
@@ -109,8 +109,8 @@ function Dashboard() {
               <MDBox mb={1.5}>
                 <ComplexStatisticsCard
                   icon={<CategoryIcon />}
-                  title="Department Message"
-                  count={0}
+                  title="Top Categories"
+                  count={281}
                   color="primary"
                 />
               </MDBox>
@@ -120,9 +120,31 @@ function Dashboard() {
               <MDBox mb={1.5}>
                 <ComplexStatisticsCard
                   icon={<CategoryIcon />}
-                  title="Website Slider"
-                  count="0"
+                  title="Mid Categories"
+                  count="2,300"
                   color="secondary"
+                />
+              </MDBox>
+            </Grid>
+
+            <Grid item xs={12} md={6} lg={3}>
+              <MDBox mb={1.5}>
+                <ComplexStatisticsCard
+                  color="success"
+                  icon={<CategoryIcon />}
+                  title="End Categories"
+                  count="34k"
+                />
+              </MDBox>
+            </Grid>
+
+            <Grid item xs={12} md={6} lg={3}>
+              <MDBox mb={1.5}>
+                <ComplexStatisticsCard
+                  color="warning"
+                  icon={<PersonAdd />}
+                  title="Active Seller"
+                  count="+91"
                 />
               </MDBox>
             </Grid>

@@ -5,10 +5,6 @@ import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
-import InputLabel from "@mui/material/InputLabel";
-import FormControl from "@mui/material/FormControl";
 import { Editor } from "@tinymce/tinymce-react";
 
 import MDBox from "components/MDBox";
@@ -16,20 +12,21 @@ import MDTypography from "components/MDTypography";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 
-function AddCategories() {
+function AddTeam() {
   const [loading, setLoading] = useState(false);
   const [imagePreview, setImagePreview] = useState(null);
-  const [Categorie, setCategorie] = useState("");
-  const [Categoriedec, setCategoriedec] = useState("");
-  const [Categoriesstatus, setCategoriesstatus] = useState("");
+  const [teamname, setTeamname] = useState("");
+  const [teamposstion, setTeamposstion] = useState("");
+  const [teamdec, setTeamdec] = useState("");
   const [file, setFile] = useState(null);
   const editorRef = useRef(null);
 
   // Handle input field changes
   const handleChange = (e) => {
     const { name, value } = e.target;
-    if (name === "Categorie") setCategorie(value);
-    if (name === "Categoriesstatus") setCategoriesstatus(value);
+    if (name === "teamname") setTeamname(value);
+    if (name === "teamposstion") setTeamposstion(value);
+    if (name === "teamdec") setTeamdec(value);
   };
 
   // Handle image file change
@@ -49,7 +46,7 @@ function AddCategories() {
 
   // Handle TinyMCE editor changes
   const handleEditorChange = (content) => {
-    setCategoriedec(content);
+    setTeamdec(content);
   };
 
   // Submit the form
@@ -58,7 +55,7 @@ function AddCategories() {
     setLoading(true);
 
     // Basic validation
-    if (!Categorie || !Categoriedec || !Categoriesstatus || !file) {
+    if (!teamname || !teamposstion || !teamdec || !file) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
@@ -70,12 +67,11 @@ function AddCategories() {
 
     const formData = new FormData();
     formData.append("photo", file);
-    formData.append("Categorie", Categorie);
-    formData.append("Categoriedec", Categoriedec);
-    formData.append("Categoriesstatus", Categoriesstatus);
-
+    formData.append("teamname", teamname);
+    formData.append("teamposstion", teamposstion);
+    formData.append("teamdec", teamdec);
     try {
-      const res = await axios.post(`${process.env.REACT_APP_API_HOST}/categories`, formData, {
+      const res = await axios.post(`${process.env.REACT_APP_API_HOST}/Team`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
@@ -94,9 +90,9 @@ function AddCategories() {
         });
 
         // Clear the form
-        setCategorie("");
-        setCategoriedec("");
-        setCategoriesstatus("");
+        setTeamname("");
+        setTeamposstion("");
+        setTeamdec("");
         setFile(null);
         setImagePreview(null);
       }
@@ -133,7 +129,7 @@ function AddCategories() {
                 alignItems="center"
               >
                 <MDTypography variant="h6" color="white">
-                  Add New Category
+                  Add New News
                 </MDTypography>
               </MDBox>
 
@@ -141,69 +137,69 @@ function AddCategories() {
               <MDBox pt={3} px={2} sx={{ paddingBottom: "24px" }}>
                 <form onSubmit={handleSubmit}>
                   <TextField
-                    label="Category Name"
+                    label="News Heading"
                     variant="outlined"
                     fullWidth
                     sx={{ mb: 2 }}
-                    name="Categorie"
-                    value={Categorie}
+                    name="teamname"
+                    value={teamname}
                     onChange={handleChange}
                   />
-
-                  <Editor
-                    apiKey="hkk12ec9ohtvvpvn8nqjjmlq7gec9klnt54dk767ewll5f09"
-                    value={Categoriedec}
-                    onEditorChange={handleEditorChange}
-                    init={{
-                      height: 500,
-                      menubar: false,
-                      plugins: [
-                        "a11ychecker",
-                        "advlist",
-                        "advcode",
-                        "advtable",
-                        "autolink",
-                        "checklist",
-                        "export",
-                        "lists",
-                        "link",
-                        "image",
-                        "charmap",
-                        "preview",
-                        "anchor",
-                        "searchreplace",
-                        "visualblocks",
-                        "powerpaste",
-                        "fullscreen",
-                        "formatpainter",
-                        "insertdatetime",
-                        "media",
-                        "table",
-                        "help",
-                        "wordcount",
-                      ],
-                      toolbar:
-                        "undo redo | casechange blocks | bold italic backcolor | " +
-                        "alignleft aligncenter alignright alignjustify | " +
-                        "bullist numlist checklist outdent indent | removeformat | a11ycheck code table help",
-                      content_style:
-                        "body { font-family:Helvetica,Arial,sans-serif; font-size:14px, margin-bottom: 30px; }",
-                    }}
+                  <TextField
+                    label="News Heading"
+                    variant="outlined"
+                    fullWidth
+                    sx={{ mb: 2 }}
+                    name="teamposstion"
+                    value={teamposstion}
+                    onChange={handleChange}
                   />
-                  <FormControl fullWidth sx={{ mb: 2 }}>
-                    <InputLabel>Show on Menu?</InputLabel>
-                    <Select
-                      label="Show on Menu?"
-                      sx={{ height: "40px" }}
-                      name="Categoriesstatus"
-                      value={Categoriesstatus}
-                      onChange={handleChange}
-                    >
-                      <MenuItem value="Yes">Yes</MenuItem>
-                      <MenuItem value="No">No</MenuItem>
-                    </Select>
-                  </FormControl>
-
+                  <div style={{ marginBottom: "20px" }}>
+                    <Editor
+                      apiKey="hkk12ec9ohtvvpvn8nqjjmlq7gec9klnt54dk767ewll5f09"
+                      value={teamdec}
+                      onEditorChange={handleEditorChange}
+                      init={{
+                        height: 300,
+                        menubar: false,
+                        plugins: [
+                          "a11ychecker",
+                          "advlist",
+                          "advcode",
+                          "advtable",
+                          "autolink",
+                          "checklist",
+                          "export",
+                          "lists",
+                          "link",
+                          "image",
+                          "charmap",
+                          "preview",
+                          "anchor",
+                          "searchreplace",
+                          "visualblocks",
+                          "powerpaste",
+                          "fullscreen",
+                          "formatpainter",
+                          "insertdatetime",
+                          "media",
+                          "table",
+                          "help",
+                          "wordcount",
+                          "emoticons", // Add emoticons plugin
+                          "spellchecker", // Add spellchecker plugin
+                          "mediaembed", // Add media embed plugin
+                          "autosave", // Add autosave plugin
+                        ],
+                        toolbar:
+                          "undo redo | casechange blocks | bold italic backcolor | " +
+                          "alignleft aligncenter alignright alignjustify | " +
+                          "bullist numlist checklist outdent indent | removeformat | a11ycheck code table help",
+                        content_style:
+                          "body { font-family:Helvetica,Arial,sans-serif; font-size:14px; margin-bottom: 20px; }",
+                      }}
+                    />
+                  </div>
                   {/* Image Upload Button */}
                   <label htmlFor="file-upload">
                     <input
@@ -280,4 +276,4 @@ function AddCategories() {
   );
 }
 
-export default AddCategories;
+export default AddTeam;

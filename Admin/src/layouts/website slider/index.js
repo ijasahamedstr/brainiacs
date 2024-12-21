@@ -13,6 +13,7 @@ import Swal from "sweetalert2"; // Import SweetAlert2
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
+import MDBadge from "components/MDBadge";
 
 // Material Dashboard 2 React example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
@@ -49,8 +50,8 @@ Job.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
-function Color() {
-  const [Color, setColor] = useState([]);
+function WebsiteSlider() {
+  const [WebsiteSlider, setWebsiteSlider] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -58,8 +59,8 @@ function Color() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_HOST}/color`);
-        setColor(response.data); // Set the fetched categories
+        const response = await axios.get(`${process.env.REACT_APP_API_HOST}/WebsiteSlider`);
+        setWebsiteSlider(response.data); // Set the fetched categories
       } catch (error) {
         console.error("Error fetching data: ", error);
         setError("Failed to fetch categories");
@@ -76,7 +77,7 @@ function Color() {
 
   // Define the columns for the DataTable
   const columns = [
-    { Header: "color", accessor: "color", align: "left" },
+    { Header: "WebsiteSlider", accessor: "WebsiteSlider", width: "45%", align: "left" },
     { Header: "Action", accessor: "action", align: "center" },
   ];
 
@@ -94,8 +95,8 @@ function Color() {
 
     if (result.isConfirmed) {
       try {
-        await axios.delete(`${process.env.REACT_APP_API_HOST}/color/${id}`);
-        setColor(Color.filter((color) => color._id !== id)); // Update local state after deletion
+        await axios.delete(`${process.env.REACT_APP_API_HOST}/WebsiteSlider/${id}`);
+        setWebsiteSlider(WebsiteSlider.filter((WebsiteSlider) => WebsiteSlider._id !== id)); // Update local state after deletion
         Swal.fire("Deleted!", "Your category has been deleted.", "success");
       } catch (error) {
         console.error("Error deleting category: ", error);
@@ -106,8 +107,30 @@ function Color() {
   };
 
   // Map through the Categories data to build rows
-  const rows = Color.map((item) => ({
-    color: <Author name={item.color} />,
+  const rows = WebsiteSlider.map((item) => ({
+    WebsiteSlider: (
+      <MDBox>
+        {item.imgpath ? (
+          <img
+            src={`${process.env.REACT_APP_API_HOST}/uploads/Slider/${item.imgpath}`}
+            alt="Background"
+            style={{
+              maxWidth: "150px", // Set a smaller size for the image
+              borderRadius: "8px",
+            }}
+          />
+        ) : (
+          <img
+            src="https://img.freepik.com/premium-vector/no-photo-available-vector-icon-default-image-symbol-picture-coming-soon-web-site-mobile-app_87543-18055.jpg"
+            alt="Default Background"
+            style={{
+              maxWidth: "50px", // Set a smaller size for the image
+              borderRadius: "8px",
+            }}
+          />
+        )}
+      </MDBox>
+    ),
     action: (
       <MDBox display="flex" justifyContent="center" alignItems="center" gap={2}>
         {/* Edit button with icon */}
@@ -176,9 +199,9 @@ function Color() {
                 alignItems="center"
               >
                 <MDTypography variant="h6" color="white">
-                  Categories Table
+                  website slider Table
                 </MDTypography>
-                <Link to="/new-color">
+                <Link to="/new-WebsiteSlider">
                   <Button
                     variant="contained"
                     color="primary"
@@ -215,4 +238,4 @@ function Color() {
   );
 }
 
-export default Color;
+export default WebsiteSlider;

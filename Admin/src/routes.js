@@ -1,31 +1,27 @@
 // Material Dashboard 2 React layouts
 import Dashboard from "layouts/dashboard";
+import Billing from "layouts/billing";
+import Notifications from "layouts/notifications";
 import Profile from "layouts/profile";
 import SignIn from "layouts/authentication/sign-in";
 
 // @mui icons
 import Icon from "@mui/material/Icon";
-import Categories from "layouts/categories";
-import AddCategories from "layouts/categories/AddNew";
-import Editcategories from "layouts/categories/Editcategories";
-import MidCategories from "layouts/midcategories";
-import Size from "layouts/Size";
-import AddSize from "layouts/Size/AddNew";
-import Color from "layouts/Color";
-import AddColor from "layouts/Color/AddNew";
+import ColorLensIcon from "@mui/icons-material/ColorLens";
+import LocationCityIcon from "@mui/icons-material/LocationCity";
+import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
+import CategoryIcon from "@mui/icons-material/Category";
 import City from "layouts/City";
 import Addcity from "layouts/City/AddNew";
 import ShippingCost from "layouts/ShippingCost";
 import AddShippingCost from "layouts/ShippingCost/AddNew";
-import BurstModeIcon from "@mui/icons-material/BurstMode";
-import MessageIcon from "@mui/icons-material/Message";
-import GroupAddIcon from "@mui/icons-material/GroupAdd";
-import NewspaperIcon from "@mui/icons-material/Newspaper";
-import Diversity3Icon from "@mui/icons-material/Diversity3";
-import AssuredWorkloadIcon from "@mui/icons-material/AssuredWorkload";
-import MenuBookIcon from "@mui/icons-material/MenuBook";
-import WebsiteSlider from "layouts/WebsiteSlider";
-import WebsiteSliderAdd from "layouts/WebsiteSlider/AddNew";
+import WebsiteSlider from "layouts/website slider";
+import WebsiteSliderAdd from "layouts/website slider/AddNew";
+import News from "layouts/News";
+import Editcategories from "layouts/website slider/Editcategories";
+import AddNews from "layouts/News/AddNew";
+import Team from "layouts/Team";
+import AddTeam from "layouts/Team/AddNew";
 
 const routes = [
   {
@@ -38,59 +34,59 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Courses",
-    key: "Courses",
-    icon: <MenuBookIcon />,
-    route: "/categories",
-    component: <Categories />,
-  },
-  {
-    type: "collapse",
-    name: "Department",
-    key: "Department",
-    icon: <AssuredWorkloadIcon />,
-    route: "/midcategories",
-    component: <MidCategories />,
-  },
-  {
-    type: "collapse",
-    name: "Team",
-    key: "Team",
-    icon: <Diversity3Icon />,
-    route: "/Size",
-    component: <Size />,
+    name: "Website Slider",
+    key: "Website Slider",
+    icon: <Icon fontSize="small">table_view</Icon>,
+    route: "/WebsiteSlider",
+    component: <WebsiteSlider />,
   },
   {
     type: "collapse",
     name: "News",
     key: "News",
-    icon: <NewspaperIcon />,
-    route: "/Color",
-    component: <Color />,
+    icon: <CategoryIcon />,
+    route: "/News",
+    component: <News />,
   },
   {
     type: "collapse",
-    name: "Student testimonials",
-    key: "Student testimonials",
-    icon: <GroupAddIcon />,
+    name: "Team",
+    key: "Team",
+    icon: <ColorLensIcon />,
+    route: "/Team",
+    component: <Team />,
+  },
+  {
+    type: "collapse",
+    name: "City",
+    key: "City",
+    icon: <LocationCityIcon />,
     route: "/City",
     component: <City />,
   },
   {
     type: "collapse",
-    name: "Department Message",
-    key: "Department Message",
-    icon: <MessageIcon />,
+    name: "Shipping Cost",
+    key: "Shipping Cost",
+    icon: <MonetizationOnIcon />,
     route: "/Shipping-Cost",
     component: <ShippingCost />,
   },
   {
     type: "collapse",
-    name: "Website Slider",
-    key: "Website Slider",
-    icon: <BurstModeIcon />,
-    route: "/WebsiteSlider",
-    component: <WebsiteSlider />,
+    name: "Billing",
+    key: "billing",
+    icon: <Icon fontSize="small">receipt_long</Icon>,
+    route: "/billing",
+    component: <Billing />,
+  },
+  {
+    type: "collapse",
+    name: "Notifications",
+    key: "notifications",
+    icon: <Icon fontSize="small">notifications</Icon>,
+    route: "/notifications",
+    component: <Notifications />,
   },
   {
     type: "collapse",
@@ -110,8 +106,18 @@ const routes = [
   },
   {
     type: "collapse",
-    route: "/new-categories",
-    component: <AddCategories />,
+    route: "/new-WebsiteSlider",
+    component: <WebsiteSliderAdd />,
+  },
+  {
+    type: "collapse",
+    route: "/new-News",
+    component: <AddNews />,
+  },
+  {
+    type: "collapse",
+    route: "/new-Team",
+    component: <AddTeam />,
   },
   {
     type: "collapse",
@@ -120,23 +126,13 @@ const routes = [
   },
   {
     type: "collapse",
-    route: "/new-size",
-    component: <AddSize />,
-  },
-  {
-    type: "collapse",
-    route: "/new-color",
-    component: <AddColor />,
-  },
-  {
-    type: "collapse",
     route: "/new-city",
     component: <Addcity />,
   },
   {
     type: "collapse",
-    route: "/WebsiteSliderAdd",
-    component: <WebsiteSliderAdd />,
+    route: "/new-shippingcost",
+    component: <AddShippingCost />,
   },
 ];
 

@@ -5,24 +5,26 @@ import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
+import { Editor } from "@tinymce/tinymce-react";
+
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 
-function WebsiteSliderAdd() {
+function AddNews() {
   const [loading, setLoading] = useState(false);
   const [imagePreview, setImagePreview] = useState(null);
-  const [Categorie, setCategorie] = useState("");
-  const [Categoriedec, setCategoriedec] = useState("");
-  const [Categoriesstatus, setCategoriesstatus] = useState("");
+  const [newsheading, setNewsheading] = useState("");
+  const [newsdec, setNewsdec] = useState("");
   const [file, setFile] = useState(null);
+  const editorRef = useRef(null);
 
   // Handle input field changes
   const handleChange = (e) => {
     const { name, value } = e.target;
-    if (name === "Categorie") setCategorie(value);
-    if (name === "Categoriesstatus") setCategoriesstatus(value);
+    if (name === "newsheading") setNewsheading(value);
+    if (name === "newsdec") setNewsdec(value);
   };
 
   // Handle image file change
@@ -42,7 +44,7 @@ function WebsiteSliderAdd() {
 
   // Handle TinyMCE editor changes
   const handleEditorChange = (content) => {
-    setCategoriedec(content);
+    setNewsdec(content);
   };
 
   // Submit the form
@@ -51,7 +53,7 @@ function WebsiteSliderAdd() {
     setLoading(true);
 
     // Basic validation
-    if (!Categorie || !Categoriedec || !Categoriesstatus || !file) {
+    if (!newsheading || !newsdec || !file) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
@@ -63,12 +65,10 @@ function WebsiteSliderAdd() {
 
     const formData = new FormData();
     formData.append("photo", file);
-    formData.append("Categorie", Categorie);
-    formData.append("Categoriedec", Categoriedec);
-    formData.append("Categoriesstatus", Categoriesstatus);
-
+    formData.append("newsheading", newsheading);
+    formData.append("newsdec", newsdec);
     try {
-      const res = await axios.post(`${process.env.REACT_APP_API_HOST}/categories`, formData, {
+      const res = await axios.post(`${process.env.REACT_APP_API_HOST}/News`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
@@ -87,9 +87,8 @@ function WebsiteSliderAdd() {
         });
 
         // Clear the form
-        setCategorie("");
-        setCategoriedec("");
-        setCategoriesstatus("");
+        setNewsheading("");
+        setNewsdec("");
         setFile(null);
         setImagePreview(null);
       }
@@ -126,14 +125,68 @@ function WebsiteSliderAdd() {
                 alignItems="center"
               >
                 <MDTypography variant="h6" color="white">
-                  Add New Website Slider
+                  Add New News
                 </MDTypography>
               </MDBox>
 
               {/* Form for adding category */}
               <MDBox pt={3} px={2} sx={{ paddingBottom: "24px" }}>
                 <form onSubmit={handleSubmit}>
-                  
+                  <TextField
+                    label="News Heading"
+                    variant="outlined"
+                    fullWidth
+                    sx={{ mb: 2 }}
+                    name="newsheading"
+                    value={newsheading}
+                    onChange={handleChange}
+                  />
+                  <div style={{ marginBottom: "20px" }}>
+                    <Editor
+                      apiKey="hkk12ec9ohtvvpvn8nqjjmlq7gec9klnt54dk767ewll5f09"
+                      value={newsdec}
+                      onEditorChange={handleEditorChange}
+                      init={{
+                        height: 300,
+                        menubar: false,
+                        plugins: [
+                          "a11ychecker",
+                          "advlist",
+                          "advcode",
+                          "advtable",
+                          "autolink",
+                          "checklist",
+                          "export",
+                          "lists",
+                          "link",
+                          "image",
+                          "charmap",
+                          "preview",
+                          "anchor",
+                          "searchreplace",
+                          "visualblocks",
+                          "powerpaste",
+                          "fullscreen",
+                          "formatpainter",
+                          "insertdatetime",
+                          "media",
+                          "table",
+                          "help",
+                          "wordcount",
+                          "emoticons", // Add emoticons plugin
+                          "spellchecker", // Add spellchecker plugin
+                          "mediaembed", // Add media embed plugin
+                          "autosave", // Add autosave plugin
+                        ],
+                        toolbar:
+                          "undo redo | casechange blocks | bold italic backcolor | " +
+                          "alignleft aligncenter alignright alignjustify | " +
+                          "bullist numlist checklist outdent indent | removeformat | a11ycheck code table help",
+                        content_style:
+                          "body { font-family:Helvetica,Arial,sans-serif; font-size:14px; margin-bottom: 20px; }",
+                      }}
+                    />
+                  </div>
                   {/* Image Upload Button */}
                   <label htmlFor="file-upload">
                     <input
@@ -210,4 +263,4 @@ function WebsiteSliderAdd() {
   );
 }
 
-export default WebsiteSliderAdd;
+export default AddNews;

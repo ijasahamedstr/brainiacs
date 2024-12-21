@@ -1,123 +1,86 @@
-import React, { useState } from "react";
-import axios from "axios"; // Ensure axios is imported
-import Swal from "sweetalert2"; // Ensure Swal is imported
+import React, { useState, useRef } from "react";
+import axios from "axios";
+import Swal from "sweetalert2";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
-import InputLabel from "@mui/material/InputLabel";
-import FormControl from "@mui/material/FormControl";
 
-// Material Dashboard 2 React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
-
-// Material Dashboard 2 React example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 
-function AddCategories() {
+function WebsiteSliderAdd() {
   const [loading, setLoading] = useState(false);
   const [imagePreview, setImagePreview] = useState(null);
+  const [file, setFile] = useState(null);
 
-  // Seller Form field states
-  const [Categorie, setCategorie] = useState("");
-  const [Categoriedec, setCategoriedec] = useState("");
-  const [Categoriesstatus, setCategoriesstatus] = useState("");
-  const [file, setFile] = useState(null); // Ensure this is null initially
-
-  // Handle changes in input fields
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    switch (name) {
-      case "Categorie":
-        setCategorie(value);
-        break;
-      case "Categoriedec":
-        setCategoriedec(value);
-        break;
-      case "Categoriesstatus":
-        setCategoriesstatus(value);
-        break;
-      default:
-        break;
-    }
-  };
-
-  // Handle file input change
+  // Handle image file change
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
-    setFile(selectedFile); // Update the file state
+    setFile(selectedFile);
 
+    // Preview image
     if (selectedFile) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        setImagePreview(reader.result); // Set the image preview URL
+        setImagePreview(reader.result);
       };
-      reader.readAsDataURL(selectedFile); // Convert the image file to a URL
+      reader.readAsDataURL(selectedFile);
     }
   };
 
-  // Submit form data
+  // Submit the form
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    // Prepare form data for submission
-    const formData = new FormData();
-    formData.append("photo", file); // Append the selected file
-    formData.append("Categorie", Categorie);
-    formData.append("Categoriedec", Categoriedec);
-    formData.append("Categoriesstatus", Categoriesstatus);
+    // Basic validation
+    if (!file) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "All fields must be filled out, and an image must be uploaded!",
+      });
+      setLoading(false);
+      return;
+    }
 
-    const config = {
-      headers: {
-        "Content-Type": "multipart/form-data", // Indicating multipart form
-      },
-    };
+    const formData = new FormData();
+    formData.append("photo", file);
 
     try {
-      // Make the POST request to register the category
-      const res = await axios.post(
-        `${process.env.REACT_APP_API_HOST}/categories`,
-        formData,
-        config
-      );
+      const res = await axios.post(`${process.env.REACT_APP_API_HOST}/WebsiteSlider`, formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
 
-      // Check response for success or failure
+      // Check response status and display appropriate message
       if (res.data.status === 401 || !res.data) {
-        // If error, display a failure message
         Swal.fire({
           icon: "error",
           title: "Oops...",
           text: "Category addition failed. Please try again!",
         });
       } else {
-        // On success, show a success message
         Swal.fire({
           icon: "success",
           title: "Success!",
           text: "Category added successfully!",
         });
 
-        // Clear form fields after successful addition
-        setCategorie("");
-        setCategoriedec("");
-        setCategoriesstatus("");
-        setFile(null); // Reset file input
-        setImagePreview(null); // Clear the image preview
+        // Clear the form
+        setFile(null);
+        setImagePreview(null);
       }
     } catch (error) {
-      // If there's an error during the request, display a failure message
       Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: "Category addition failed. Please try again!",
+        text: "An error occurred during the submission. Please try again.",
       });
+      console.error(error);
     } finally {
-      setLoading(false); // Stop the loading state
+      setLoading(false);
     }
   };
 
@@ -142,51 +105,14 @@ function AddCategories() {
                 alignItems="center"
               >
                 <MDTypography variant="h6" color="white">
-                  Add New Category
+                  Add New WebsiteSlider
                 </MDTypography>
               </MDBox>
 
-              {/* Add Category Form */}
+              {/* Form for adding category */}
               <MDBox pt={3} px={2} sx={{ paddingBottom: "24px" }}>
                 <form onSubmit={handleSubmit}>
-                  {/* Category Name */}
-                  <TextField
-                    label="Category Name"
-                    variant="outlined"
-                    fullWidth
-                    sx={{ mb: 2 }}
-                    name="Categorie"
-                    value={Categorie}
-                    onChange={handleChange}
-                  />
-
-                  {/* Category Description */}
-                  <TextField
-                    label="Category Description"
-                    variant="outlined"
-                    fullWidth
-                    sx={{ mb: 2 }}
-                    name="Categoriedec"
-                    value={Categoriedec}
-                    onChange={handleChange}
-                  />
-
-                  {/* Dropdown for Show on Menu */}
-                  <FormControl fullWidth sx={{ mb: 2 }}>
-                    <InputLabel>Show on Menu?</InputLabel>
-                    <Select
-                      label="Show on Menu?"
-                      sx={{ height: "40px" }}
-                      name="Categoriesstatus"
-                      value={Categoriesstatus}
-                      onChange={handleChange}
-                    >
-                      <MenuItem value="Yes">Yes</MenuItem>
-                      <MenuItem value="No">No</MenuItem>
-                    </Select>
-                  </FormControl>
-
-                  {/* Image Upload Field */}
+                  {/* Image Upload Button */}
                   <label htmlFor="file-upload">
                     <input
                       id="file-upload"
@@ -234,7 +160,7 @@ function AddCategories() {
                         style={{
                           width: "100%",
                           height: "auto",
-                          maxWidth: "200px", // Limit the image size
+                          maxWidth: "200px",
                           borderRadius: "4px",
                         }}
                       />
@@ -262,4 +188,4 @@ function AddCategories() {
   );
 }
 
-export default AddCategories;
+export default WebsiteSliderAdd;

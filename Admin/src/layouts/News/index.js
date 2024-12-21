@@ -50,8 +50,8 @@ Job.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
-function Categories() {
-  const [Categories, setCategories] = useState([]);
+function News() {
+  const [News, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -59,8 +59,8 @@ function Categories() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_HOST}/categories`);
-        setCategories(response.data); // Set the fetched categories
+        const response = await axios.get(`${process.env.REACT_APP_API_HOST}/News`);
+        setNews(response.data); // Set the fetched categories
       } catch (error) {
         console.error("Error fetching data: ", error);
         setError("Failed to fetch categories");
@@ -77,9 +77,8 @@ function Categories() {
 
   // Define the columns for the DataTable
   const columns = [
-    { Header: "Categories", accessor: "Categories", width: "45%", align: "left" },
-    { Header: "Categories description", accessor: "Categoriesdescription", align: "left" },
-    { Header: "Categories status", accessor: "Categoriesstatus", align: "center" },
+    { Header: "News", accessor: "News", width: "20%", align: "left" },
+    { Header: "News_description", accessor: "News_description", width: "20%", align: "left" },
     { Header: "Background Image", accessor: "BackgroundImage", align: "center" },
     { Header: "Action", accessor: "action", align: "center" },
   ];
@@ -98,8 +97,8 @@ function Categories() {
 
     if (result.isConfirmed) {
       try {
-        await axios.delete(`${process.env.REACT_APP_API_HOST}/categories/${id}`);
-        setCategories(Categories.filter((category) => category._id !== id)); // Update local state after deletion
+        await axios.delete(`${process.env.REACT_APP_API_HOST}/WebsiteSlider/${id}`);
+        setNews(News.filter((News) => News._id !== id)); // Update local state after deletion
         Swal.fire("Deleted!", "Your category has been deleted.", "success");
       } catch (error) {
         console.error("Error deleting category: ", error);
@@ -110,9 +109,10 @@ function Categories() {
   };
 
   // Map through the Categories data to build rows
-  const rows = Categories.map((item) => ({
-    Categories: <Author name={item.Categorie} />,
-    Categoriesdescription: <Job title={item.Categoriedec} />,
+  const rows = News.map((item) => ({
+    News: <Author name={item.newsheading} />,
+    News_description: <Author name={item.newsdec} />,
+    News_des: <Job title={item.Categoriedec} />,
     Categoriesstatus: (
       <MDBadge
         badgeContent={item.Categoriesstatus === "Yes" ? "Yes" : "No"}
@@ -123,12 +123,12 @@ function Categories() {
     ),
     BackgroundImage: (
       <MDBox>
-        {item.image_path ? (
+        {item.imgpath ? (
           <img
-            src={`${process.env.REACT_APP_API_HOST}/uploads/Categories/${item.image_path}`}
+            src={`${process.env.REACT_APP_API_HOST}/uploads/News/${item.imgpath}`}
             alt="Background"
             style={{
-              maxWidth: "50px", // Set a smaller size for the image
+              maxWidth: "150px", // Set a smaller size for the image
               borderRadius: "8px",
             }}
           />
@@ -212,9 +212,9 @@ function Categories() {
                 alignItems="center"
               >
                 <MDTypography variant="h6" color="white">
-                  Categories Table
+                  News Table
                 </MDTypography>
-                <Link to="/new-categories">
+                <Link to="/new-News">
                   <Button
                     variant="contained"
                     color="primary"
@@ -251,4 +251,4 @@ function Categories() {
   );
 }
 
-export default Categories;
+export default News;

@@ -6,6 +6,10 @@ import cookiParser from "cookie-parser";
 import path from 'path';
 import AccountAdminloginrouter from './routes/AccountLogin.route.js';
 import AccountAdminrouter from "./routes/AccountRegisterAdmin.route.js";
+import { fileURLToPath } from 'url';
+import Newsrouter from "./routes/news.route.js";
+import WebsiteSliderrouter from "./routes/WebsiteSlider.route.js";
+import Teamrouter from "./routes/Team.route.js";
 
 
 
@@ -42,11 +46,19 @@ app.use('/Adminlogin', AccountAdminloginrouter);
 
 app.use('/Adminregister',AccountAdminrouter);
 
+app.use('/WebsiteSlider',WebsiteSliderrouter);
 
-// // Get __dirname equivalent for ES modules
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
-// app.use('/uploads/Categories', express.static(path.join(__dirname, 'uploads/Categories')));
+app.use('/News',Newsrouter);
+
+app.use('/Team',Teamrouter);
+
+
+// Get __dirname equivalent for ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+app.use('/uploads/Slider', express.static(path.join(__dirname, 'uploads/Slider')));
+app.use('/uploads/News', express.static(path.join(__dirname, 'uploads/News')));
+app.use('/uploads/Team', express.static(path.join(__dirname, 'uploads/Team')));
 
 
 // Start the Express server
