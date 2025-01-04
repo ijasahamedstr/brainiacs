@@ -129,7 +129,7 @@ function AddTeam() {
                 alignItems="center"
               >
                 <MDTypography variant="h6" color="white">
-                  Add New News
+                  Add New Team
                 </MDTypography>
               </MDBox>
 
@@ -137,7 +137,7 @@ function AddTeam() {
               <MDBox pt={3} px={2} sx={{ paddingBottom: "24px" }}>
                 <form onSubmit={handleSubmit}>
                   <TextField
-                    label="News Heading"
+                    label="Team Name"
                     variant="outlined"
                     fullWidth
                     sx={{ mb: 2 }}
@@ -146,7 +146,7 @@ function AddTeam() {
                     onChange={handleChange}
                   />
                   <TextField
-                    label="News Heading"
+                    label="Team Posstion"
                     variant="outlined"
                     fullWidth
                     sx={{ mb: 2 }}

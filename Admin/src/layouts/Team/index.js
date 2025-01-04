@@ -76,7 +76,10 @@ function Team() {
 
   // Define the columns for the DataTable
   const columns = [
-    { Header: "color", accessor: "color", align: "left" },
+    { Header: "Team Name", accessor: "TeamName", align: "left" },
+    { Header: "Team Posstion", accessor: "TeamPosstion", align: "left" },
+    { Header: "Team description", accessor: "Teamdescription", align: "left" },
+    { Header: "Background Image", accessor: "BackgroundImage", align: "center" },
     { Header: "Action", accessor: "action", align: "center" },
   ];
 
@@ -94,7 +97,7 @@ function Team() {
 
     if (result.isConfirmed) {
       try {
-        await axios.delete(`${process.env.REACT_APP_API_HOST}/color/${id}`);
+        await axios.delete(`${process.env.REACT_APP_API_HOST}/Team/${id}`);
         setColor(Color.filter((color) => color._id !== id)); // Update local state after deletion
         Swal.fire("Deleted!", "Your category has been deleted.", "success");
       } catch (error) {
@@ -107,7 +110,32 @@ function Team() {
 
   // Map through the Categories data to build rows
   const rows = Color.map((item) => ({
-    color: <Author name={item.color} />,
+    TeamName: <Author name={item.teamname} />,
+    TeamPosstion: <Author name={item.teamposstion} />,
+    Teamdescription: <Author name={item.teamdec} />,
+    BackgroundImage: (
+      <MDBox>
+        {item.imgpath ? (
+          <img
+            src={`${process.env.REACT_APP_API_HOST}/uploads/Team/${item.imgpath}`}
+            alt="Background"
+            style={{
+              maxWidth: "150px", // Set a smaller size for the image
+              borderRadius: "8px",
+            }}
+          />
+        ) : (
+          <img
+            src="https://img.freepik.com/premium-vector/no-photo-available-vector-icon-default-image-symbol-picture-coming-soon-web-site-mobile-app_87543-18055.jpg"
+            alt="Default Background"
+            style={{
+              maxWidth: "50px", // Set a smaller size for the image
+              borderRadius: "8px",
+            }}
+          />
+        )}
+      </MDBox>
+    ),
     action: (
       <MDBox display="flex" justifyContent="center" alignItems="center" gap={2}>
         {/* Edit button with icon */}

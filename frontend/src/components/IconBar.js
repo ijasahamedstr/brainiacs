@@ -7,19 +7,17 @@ function IconBar() {
   return (
     <section
       style={{
-        backgroundColor: "#f2f3f4",
-        width: "100%", // Full width
-        marginBottom: "30px", // Bottom margin for spacing
+        width: "100%", 
+        marginBottom: "70px",
         display: "flex",
-        justifyContent: "center", // Horizontally center the content
-        alignItems: "center", // Vertically center the content
-        flexDirection: "column", // Stack items vertically
-        height: "auto", // Adjust height to fit the content
-        paddingTop: "40px", // More padding at the top for balance
-        backgroundImage: 'url("https://your-image-url.com/image.jpg")', // Replace with your image URL
-        backgroundSize: "cover", // Ensure the background covers the entire section
-        backgroundPosition: "center", // Center the background image
-        backgroundAttachment: "fixed", // Make the background stay fixed on scroll
+        justifyContent: "center", 
+        alignItems: "center",
+        flexDirection: "column", 
+        height: "auto", 
+        paddingTop: "40px", 
+        backgroundSize: "cover", 
+        backgroundPosition: "center", 
+        backgroundAttachment: "fixed",
       }}
     >
       {/* Grid Layout for Larger Screens */}
@@ -41,7 +39,8 @@ function IconBar() {
               backgroundColor: "#fff",
               padding: "20px",
               borderRadius: "10px",
-              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+              border: "2px solid #000", // Black border
+              boxShadow: "0 6px 15px rgba(0, 0, 0, 0.15)", // Enhanced shadow effect
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
@@ -82,7 +81,7 @@ function IconBar() {
           overflowX: "auto", // Enable horizontal scrolling
           whiteSpace: "nowrap", // Ensure content is displayed in a single line
           gap: "10px",
-          padding: "10px 0", // Add some padding for the slider
+          padding: "10px 20px", // Added padding for left and right on mobile
           marginTop: "20px", // Space between the grid and the slider
         }}
         className="mobile-slider"
@@ -95,7 +94,8 @@ function IconBar() {
               backgroundColor: "#fff",
               padding: "20px",
               borderRadius: "10px",
-              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+              border: "2px solid #000", // Black border for mobile slider
+              boxShadow: "0 6px 15px rgba(0, 0, 0, 0.15)", // Enhanced shadow effect for mobile
               textAlign: "center",
               minWidth: "150px", // Minimum width for each card in the slider
               margin: "0 10px",

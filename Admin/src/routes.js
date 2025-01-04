@@ -11,10 +11,6 @@ import ColorLensIcon from "@mui/icons-material/ColorLens";
 import LocationCityIcon from "@mui/icons-material/LocationCity";
 import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 import CategoryIcon from "@mui/icons-material/Category";
-import City from "layouts/City";
-import Addcity from "layouts/City/AddNew";
-import ShippingCost from "layouts/ShippingCost";
-import AddShippingCost from "layouts/ShippingCost/AddNew";
 import WebsiteSlider from "layouts/website slider";
 import WebsiteSliderAdd from "layouts/website slider/AddNew";
 import News from "layouts/News";
@@ -22,6 +18,10 @@ import Editcategories from "layouts/website slider/Editcategories";
 import AddNews from "layouts/News/AddNew";
 import Team from "layouts/Team";
 import AddTeam from "layouts/Team/AddNew";
+import Department from "layouts/Department";
+import AddDepartment from "layouts/Department/AddNew";
+import DepartmentMessage from "layouts/Department Message";
+import AddDepartmentMessage from "layouts/Department Message/AddNew";
 
 const routes = [
   {
@@ -58,19 +58,19 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "City",
-    key: "City",
+    name: "Department",
+    key: "Department",
     icon: <LocationCityIcon />,
-    route: "/City",
-    component: <City />,
+    route: "/Department",
+    component: <Department />,
   },
   {
     type: "collapse",
-    name: "Shipping Cost",
-    key: "Shipping Cost",
+    name: "Department Message",
+    key: "Department Message",
     icon: <MonetizationOnIcon />,
-    route: "/Shipping-Cost",
-    component: <ShippingCost />,
+    route: "/Department-Message",
+    component: <DepartmentMessage />,
   },
   {
     type: "collapse",
@@ -126,13 +126,13 @@ const routes = [
   },
   {
     type: "collapse",
-    route: "/new-city",
-    component: <Addcity />,
+    route: "/new-Department",
+    component: <AddDepartment />,
   },
   {
     type: "collapse",
     route: "/new-shippingcost",
-    component: <AddShippingCost />,
+    component: <AddDepartmentMessage />,
   },
 ];
 

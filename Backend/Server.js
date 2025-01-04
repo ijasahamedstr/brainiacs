@@ -10,6 +10,8 @@ import { fileURLToPath } from 'url';
 import Newsrouter from "./routes/news.route.js";
 import WebsiteSliderrouter from "./routes/WebsiteSlider.route.js";
 import Teamrouter from "./routes/Team.route.js";
+import Departmentrouter from "./routes/Department.route.js";
+import DepartmentMessagerouter from "./routes/DepartmentMessage.route.js";
 
 
 
@@ -52,6 +54,10 @@ app.use('/News',Newsrouter);
 
 app.use('/Team',Teamrouter);
 
+app.use('/Department',Departmentrouter);
+
+app.use('/DepartmentMessage',DepartmentMessagerouter);
+
 
 // Get __dirname equivalent for ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -59,7 +65,7 @@ const __dirname = path.dirname(__filename);
 app.use('/uploads/Slider', express.static(path.join(__dirname, 'uploads/Slider')));
 app.use('/uploads/News', express.static(path.join(__dirname, 'uploads/News')));
 app.use('/uploads/Team', express.static(path.join(__dirname, 'uploads/Team')));
-
+app.use('/uploads/Department', express.static(path.join(__dirname, 'uploads/Department')));
 
 // Start the Express server
 const port = 8000;

@@ -55,7 +55,7 @@ function CompanyProfile() {
             }}
           >
             <Typography
-              variant="h4"
+              variant="h3"
               component="h1"
               gutterBottom
               sx={{
@@ -68,7 +68,7 @@ function CompanyProfile() {
               Welcome to
             </Typography>
             <Typography
-              variant="h4"
+              variant="h3"
               component="h1"
               gutterBottom
               sx={{
@@ -88,7 +88,6 @@ function CompanyProfile() {
                 backgroundColor: "#33b24c", 
                 width: "30%", // Default width for larger screens
                 alignSelf: "flex-start", // Right-align the horizontal rule for larger screens
-                margin: "20px auto", // Center horizontally with some margin for spacing
               }}
               className="horizontal-line"
             />
@@ -111,16 +110,16 @@ function CompanyProfile() {
                 marginTop: "40px", // Margin top for spacing
               }}
             >
-              Shaping Lives, Creating Futures
+              About Brainiacs Campus
             </Typography>
             <Typography
               variant="body1"
               paragraph
               sx={{
-                fontFamily: "Noto Kufi Arabic", // Apply the Poppins font
+                fontFamily: "Noto Kufi Arabic", // Apply the Noto Kufi Arabic font
                 fontWeight: 400, // Regular weight for the description
                 color: "#666", // Light gray color for the description
-                lineHeight: 2, // Increase line height for better readability
+                lineHeight: 1.8, // Increased line height for better readability
                 fontSize: { xs: "0.875rem", sm: "1rem", md: "1.125rem" }, // Responsive font size
               }}
             >
