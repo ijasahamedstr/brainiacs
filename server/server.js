@@ -3,7 +3,6 @@ import express from "express";
 import connectDB from "./lib/db.js";
 import cors from "cors";
 import Accountrouter from "./routes/AccountRegister.route.js"
-import otprouter from "./routes/userOtp.route.js";
 import loginrouter from "./routes/Login.route.js";
 import validuserrouter from "./routes/ValidUser.route.js";
 import cookiParser from "cookie-parser";
@@ -59,7 +58,6 @@ app.use(express.urlencoded({extended:true}))
 app.use('/register',Accountrouter);
 
 // Login 
-app.use('/userotp',otprouter);
 app.use('/login',loginrouter);
 app.use('/validuser',validuserrouter);
 app.use('/logout',logoutrouter);
