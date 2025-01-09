@@ -14,7 +14,6 @@ import Departmentrouter from "./routes/Department.route.js";
 import DepartmentMessagerouter from "./routes/DepartmentMessage.route.js";
 
 
-
 // Create an instance of Express
 const app = express();
 
@@ -29,7 +28,7 @@ app.get('/', (req, res) => {
 });
 
 app.use(cors({
-  origin:"http://localhost:3000",
+  origin:"https://brainiacs-eta.vercel.app",
   methods:"GET,POST,PUT,DELETE",
   credentials:true
 }));
